@@ -1,0 +1,328 @@
+/* Design System Helper Classes */
+
+/* Colors */
+.colors-accent { color: #FDE10D; }
+.colors-light { color: #F4F5F6; }
+.colors-gray-light { color: #CAD3D7; }
+.colors-gray-mid { color: #879AA4; }
+.colors-gray-dark { color: #3E485A; }
+.colors-dark { color: #1D1F23; }
+
+.bg-colors-accent { background-color: #FDE10D; }
+.bg-colors-light { background-color: #F4F5F6; }
+.bg-colors-gray-light { background-color: #CAD3D7; }
+.bg-colors-gray-mid { background-color: #879AA4; }
+.bg-colors-gray-dark { background-color: #3E485A; }
+.bg-colors-dark { background-color: #1D1F23; }
+
+.border-colors-accent { border-color: #FDE10D; }
+.border-colors-light { border-color: #F4F5F6; }
+.border-colors-gray-mid { border-color: #879AA4; }
+.border-colors-gray-dark { border-color: #3E485A; }
+.border-colors-dark { border-color: #1D1F23; }
+
+/* Typography - Responsive */
+.fonts-mono-xs {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(12px, 0.8vw, 16px); /* 12px na mobile, 16px na 1920px */
+  line-height: clamp(15px, 1vw, 20px);
+  letter-spacing: 2%;
+}
+
+.fonts-mono-m {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+}
+
+.fonts-mono-l {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(16px, 1.15vw, 22px); /* 16px na mobile, 22px na 1920px */
+  line-height: clamp(19px, 1.35vw, 26px);
+  letter-spacing: 0%;
+}
+
+.fonts-fig-m {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(24px, 1.875vw, 36px); /* 24px na mobile, 36px na 1920px */
+  line-height: clamp(28px, 2.19vw, 42px);
+  letter-spacing: 2%;
+}
+
+.fonts-fig-l {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(36px, 3.385vw, 65px); /* 36px na mobile, 65px na 1920px */
+  line-height: clamp(36px, 3.75vw, 72px);
+  letter-spacing: -2.63px;
+}
+
+.fonts-fig-xl {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(48px, 4.27vw, 82px); /* 48px na mobile, 82px na 1920px */
+  line-height: clamp(54px, 4.9vw, 94px);
+  letter-spacing: -2.63px;
+}
+
+.fonts-fig-xxl {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(50px, 4.375vw, 84px); /* 50px na mobile, 84px na 1920px */
+  line-height: clamp(56px, 5vw, 96px);
+  letter-spacing: -2.63px;
+}
+
+.fonts-fig-xxl-bold {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(50px, 4.375vw, 84px); /* 50px na mobile, 84px na 1920px */
+  line-height: clamp(56px, 5vw, 96px);
+  letter-spacing: -2.63px;
+  font-weight: 800;
+}
+
+/* Gradients */
+.gradients-light {
+  background: linear-gradient(0deg, #FDE10D 0%, #F4F5F6 100%);
+}
+
+.gradients-dark {
+  background: linear-gradient(0deg, #3E485A 0%, #F4F5F6 100%);
+}
+
+.gradients-full {
+  background: linear-gradient(0deg, #FDE10D 0%, #F4F5F6 50%, #3E485A 100%);
+}
+
+/* Grid System */
+.grid-system {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  margin: 20px;
+}
+
+.grid-col-1 { grid-column: span 1; }
+.grid-col-2 { grid-column: span 2; }
+.grid-col-3 { grid-column: span 3; }
+.grid-col-4 { grid-column: span 4; }
+.grid-col-5 { grid-column: span 5; }
+.grid-col-6 { grid-column: span 6; }
+.grid-col-7 { grid-column: span 7; }
+.grid-col-8 { grid-column: span 8; }
+.grid-col-9 { grid-column: span 9; }
+.grid-col-10 { grid-column: span 10; }
+.grid-col-11 { grid-column: span 11; }
+.grid-col-12 { grid-column: span 12; }
+
+/* Typography Styles - Responsive */
+.typography-heading-xl {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(50px, 4.375vw, 84px); /* 50px na mobile, 84px na 1920px */
+  line-height: clamp(56px, 5vw, 96px);
+  letter-spacing: -2.63px;
+  color: #1D1F23;
+}
+
+.typography-heading-l {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(48px, 4.27vw, 82px); /* 48px na mobile, 82px na 1920px */
+  line-height: clamp(54px, 4.9vw, 94px);
+  letter-spacing: -2.63px;
+  color: #1D1F23;
+}
+
+.typography-heading-m {
+  font-family: "Figtree", sans-serif;
+  font-size: clamp(24px, 1.875vw, 36px); /* 24px na mobile, 36px na 1920px */
+  line-height: clamp(28px, 2.19vw, 42px);
+  letter-spacing: 2%;
+  color: #1D1F23;
+}
+
+.typography-body-l {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(16px, 1.15vw, 22px); /* 16px na mobile, 22px na 1920px */
+  line-height: clamp(19px, 1.35vw, 26px);
+  letter-spacing: 0%;
+  color: #3E485A;
+}
+
+.typography-body-m {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+  color: #3E485A;
+}
+
+.typography-body-xs {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(12px, 0.8vw, 16px); /* 12px na mobile, 16px na 1920px */
+  line-height: clamp(15px, 1vw, 20px);
+  letter-spacing: 2%;
+  color: #879AA4;
+}
+
+.typography-caption {
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(12px, 0.8vw, 16px); /* 12px na mobile, 16px na 1920px */
+  line-height: clamp(15px, 1vw, 20px);
+  letter-spacing: 2%;
+  color: #CAD3D7;
+}
+
+/* Button Styles - Responsive */
+.buttons-primary {
+  background-color: #FDE10D;
+  color: #1D1F23;
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2.5vw, 24px);
+  border-radius: 16px;
+  border: 1px solid #879AA4;
+  transition: background-color 0.2s;
+}
+
+.buttons-primary:hover {
+  background-color: rgba(253, 225, 13, 0.9);
+}
+
+.buttons-secondary {
+  background-color: #879AA4;
+  color: #1D1F23;
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2.5vw, 24px);
+  border-radius: 16px;
+  border: 1px solid #879AA4;
+  transition: background-color 0.2s;
+}
+
+.buttons-secondary:hover {
+  background-color: rgba(135, 154, 164, 0.9);
+}
+
+.buttons-ghost {
+  background-color: transparent;
+  color: #3E485A;
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2.5vw, 24px);
+  border-radius: 16px;
+  border: 1px solid #879AA4;
+  transition: background-color 0.2s;
+}
+
+.buttons-ghost:hover {
+  background-color: rgba(202, 211, 215, 0.1);
+}
+
+.buttons-accent {
+  background-color: #FDE10D;
+  color: #1D1F23;
+  font-family: "PP Supply Mono", monospace;
+  font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
+  line-height: clamp(17px, 1.25vw, 24px);
+  letter-spacing: 2%;
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2.5vw, 24px);
+  border-radius: 16px;
+  border: 1px solid #879AA4;
+  transition: background-color 0.2s;
+}
+
+.buttons-accent:hover {
+  background-color: rgba(253, 225, 13, 0.9);
+}
+
+/* Card Styles */
+.cards-default {
+  background-color: #F4F5F6;
+  border-radius: 15px;
+  border: 1px solid #879AA4;
+  padding: clamp(16px, 2.5vw, 24px);
+}
+
+.cards-dark {
+  background-color: #3E485A;
+  border-radius: 15px;
+  border: 1px solid #879AA4;
+  padding: clamp(16px, 2.5vw, 24px);
+}
+
+.cards-accent {
+  background-color: #FDE10D;
+  border-radius: 15px;
+  border: 1px solid #879AA4;
+  padding: clamp(16px, 2.5vw, 24px);
+}
+
+/* Scrollbar Hide */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .grid-col-1, .grid-col-2, .grid-col-3, .grid-col-4, .grid-col-5, .grid-col-6,
+  .grid-col-7, .grid-col-8, .grid-col-9, .grid-col-10, .grid-col-11, .grid-col-12 {
+    grid-column: span 12;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-col-1, .grid-col-2, .grid-col-3, .grid-col-4, .grid-col-5, .grid-col-6 {
+    grid-column: span 6;
+  }
+  .grid-col-7, .grid-col-8, .grid-col-9, .grid-col-10, .grid-col-11, .grid-col-12 {
+    grid-column: span 12;
+  }
+}
+
+/* Max Width based on columns */
+/* Uwzględnia gap-5 (20px) między kolumnami */
+.max-w-col-1 { max-width: calc((100% - 11 * 20px) / 12 * 1 + 0 * 20px); }
+.max-w-col-2 { max-width: calc((100% - 11 * 20px) / 12 * 2 + 1 * 20px); }
+.max-w-col-3 { max-width: calc((100% - 11 * 20px) / 12 * 3 + 2 * 20px); }
+.max-w-col-4 { max-width: calc((100% - 11 * 20px) / 12 * 4 + 3 * 20px); }
+.max-w-col-5 { max-width: calc((100% - 11 * 20px) / 12 * 5 + 4 * 20px); }
+.max-w-col-6 { max-width: calc((100% - 11 * 20px) / 12 * 6 + 5 * 20px); }
+.max-w-col-7 { max-width: calc((100% - 11 * 20px) / 12 * 7 + 6 * 20px); }
+.max-w-col-8 { max-width: calc((100% - 11 * 20px) / 12 * 8 + 7 * 20px); }
+.max-w-col-9 { max-width: calc((100% - 11 * 20px) / 12 * 9 + 8 * 20px); }
+.max-w-col-10 { max-width: calc((100% - 11 * 20px) / 12 * 10 + 9 * 20px); }
+.max-w-col-11 { max-width: calc((100% - 11 * 20px) / 12 * 11 + 10 * 20px); }
+.max-w-col-12 { max-width: calc((100% - 11 * 20px) / 12 * 12 + 11 * 20px); }
+
+/* Odpowiedniki dla max-w-xl, max-w-2xl, max-w-3xl */
+.max-w-col-l { max-width: calc((100% - 220px) / 12 * 2 + 20px); } /* 2 kolumny z 12 (1 gap) */
+.max-w-col-xl { max-width: calc((100% - 220px) / 12 * 4 + 60px); } /* 4 kolumny z 12 (3 gapy) */
+.max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 6 + 100px); } /* 6 kolumn z 12 (5 gapów) */
+.max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 8 + 140px); } /* 8 kolumn z 12 (7 gapów) */
+.max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); } /* 10 kolumn z 12 (9 gapów) */
+
+/* Responsywne warianty */
+@media (max-width: 768px) {
+  .max-w-col-l { max-width: calc((100% - 220px) / 12 * 8 + 140px); }
+  .max-w-col-xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); }
+  .max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 11 + 200px); }
+  .max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+  .max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .max-w-col-l { max-width: calc((100% - 220px) / 12 * 4 + 60px); }
+  .max-w-col-xl { max-width: calc((100% - 220px) / 12 * 6 + 100px); }
+  .max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 8 + 140px); }
+  .max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); }
+  .max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+}
