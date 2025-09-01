@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FocusElectro - Strona Internetowa
 
-## Getting Started
+Nowoczesna strona internetowa dla firmy FocusElectro, zbudowana przy użyciu Next.js 14, TypeScript i Tailwind CSS.
 
-First, run the development server:
+## 🚀 Funkcje
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsywny design** - Strona działa na wszystkich urządzeniach
+- **Wielojęzyczność** - Wsparcie dla języka polskiego i angielskiego
+- **Nowoczesny UI** - Animacje i interaktywne elementy
+- **Optymalizacja SEO** - Przyjazne dla wyszukiwarek
+- **Szybkie ładowanie** - Zoptymalizowane obrazy i kod
+
+## 🛠️ Technologie
+
+- **Next.js 14** - Framework React
+- **TypeScript** - Typowanie statyczne
+- **Tailwind CSS** - Stylowanie
+- **Framer Motion** - Animacje
+- **React Hook Form** - Formularze
+- **Zod** - Walidacja
+
+## 📁 Struktura Projektu
+
+```
+src/
+├── app/                 # App Router (Next.js 14)
+│   ├── (pages)/        # Strony aplikacji
+│   │   ├── about/      # O nas
+│   │   ├── career/     # Kariera
+│   │   ├── contact/    # Kontakt
+│   │   ├── cooperation/# Współpraca
+│   │   └── projects/   # Projekty
+│   ├── globals.css     # Globalne style
+│   ├── layout.tsx      # Główny layout
+│   └── page.tsx        # Strona główna
+├── components/         # Komponenty React
+│   ├── features/       # Komponenty funkcjonalne
+│   ├── layout/         # Komponenty layoutu
+│   ├── providers/      # Provider'y React
+│   ├── shared/         # Współdzielone komponenty
+│   └── ui/            # Podstawowe komponenty UI
+└── lib/               # Narzędzia i konfiguracja
+    ├── i18n.ts        # Konfiguracja internacjonalizacji
+    ├── locales/       # Pliki tłumaczeń
+    └── utils.ts       # Funkcje pomocnicze
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Uruchomienie
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Instalacja zależności:**
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Uruchomienie serwera deweloperskiego:**
+```bash
+npm run dev
+```
 
-## Learn More
+3. **Otwórz [http://localhost:3000](http://localhost:3000)** w przeglądarce
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Skrypty
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Serwer deweloperski
+- `npm run build` - Budowanie produkcyjne
+- `npm run start` - Uruchomienie produkcyjne
+- `npm run lint` - Sprawdzenie kodu
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Wdrożenie
 
-## Deploy on Vercel
+Projekt jest gotowy do wdrożenia na:
+- **Vercel** (zalecane)
+- **Netlify**
+- **Docker** (Dockerfile dostępny)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Licencja
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projekt jest własnością FocusElectro.
+
+## 🤝 Kontakt
+
+W przypadku pytań lub problemów, skontaktuj się z zespołem deweloperskim.
