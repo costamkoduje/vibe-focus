@@ -4,26 +4,7 @@
 
 /* Design System Helper Classes */
 
-/* Colors */
-.colors-accent { color: #FDE10D; }
-.colors-light { color: #F4F5F6; }
-.colors-gray-light { color: #CAD3D7; }
-.colors-gray-mid { color: #879AA4; }
-.colors-gray-dark { color: #3E485A; }
-.colors-dark { color: #1D1F23; }
-
-.bg-colors-accent { background-color: #FDE10D; }
-.bg-colors-light { background-color: #F4F5F6; }
-.bg-colors-gray-light { background-color: #CAD3D7; }
-.bg-colors-gray-mid { background-color: #879AA4; }
-.bg-colors-gray-dark { background-color: #3E485A; }
-.bg-colors-dark { background-color: #1D1F23; }
-
-.border-colors-accent { border-color: #FDE10D; }
-.border-colors-light { border-color: #F4F5F6; }
-.border-colors-gray-mid { border-color: #879AA4; }
-.border-colors-gray-dark { border-color: #3E485A; }
-.border-colors-dark { border-color: #1D1F23; }
+/* Colors - zgodne z Tailwind CSS config */
 
 /* Typography - Responsive */
 .fonts-mono-xs {
@@ -31,6 +12,7 @@
   font-size: clamp(12px, 0.8vw, 16px); /* 12px na mobile, 16px na 1920px */
   line-height: clamp(15px, 1vw, 20px);
   letter-spacing: 2%;
+  text-transform: uppercase;
 }
 
 .fonts-mono-m {
@@ -38,6 +20,7 @@
   font-size: clamp(14px, 1vw, 20px); /* 14px na mobile, 20px na 1920px */
   line-height: clamp(17px, 1.25vw, 24px);
   letter-spacing: 2%;
+  text-transform: uppercase;
 }
 
 .fonts-mono-l {
@@ -45,6 +28,7 @@
   font-size: clamp(16px, 1.15vw, 22px); /* 16px na mobile, 22px na 1920px */
   line-height: clamp(19px, 1.35vw, 26px);
   letter-spacing: 0%;
+  text-transform: uppercase;
 }
 
 .fonts-fig-m {
@@ -148,6 +132,7 @@
   line-height: clamp(19px, 1.35vw, 26px);
   letter-spacing: 0%;
   color: #3E485A;
+  text-transform: uppercase;
 }
 
 .typography-body-m {
@@ -156,6 +141,7 @@
   line-height: clamp(17px, 1.25vw, 24px);
   letter-spacing: 2%;
   color: #3E485A;
+  text-transform: uppercase;
 }
 
 .typography-body-xs {
@@ -164,6 +150,7 @@
   line-height: clamp(15px, 1vw, 20px);
   letter-spacing: 2%;
   color: #879AA4;
+  text-transform: uppercase;
 }
 
 .typography-caption {
@@ -172,6 +159,7 @@
   line-height: clamp(15px, 1vw, 20px);
   letter-spacing: 2%;
   color: #CAD3D7;
+  text-transform: uppercase;
 }
 
 /* Button Styles - Responsive */
@@ -186,6 +174,7 @@
   border-radius: 16px;
   border: 1px solid #879AA4;
   transition: background-color 0.2s;
+  text-transform: uppercase;
 }
 
 .buttons-primary:hover {
@@ -203,6 +192,7 @@
   border-radius: 16px;
   border: 1px solid #879AA4;
   transition: background-color 0.2s;
+  text-transform: uppercase;
 }
 
 .buttons-secondary:hover {
@@ -220,6 +210,7 @@
   border-radius: 16px;
   border: 1px solid #879AA4;
   transition: background-color 0.2s;
+  text-transform: uppercase;
 }
 
 .buttons-ghost:hover {
@@ -237,6 +228,7 @@
   border-radius: 16px;
   border: 1px solid #879AA4;
   transition: background-color 0.2s;
+  text-transform: uppercase;
 }
 
 .buttons-accent:hover {
@@ -246,23 +238,40 @@
 /* Card Styles */
 .cards-default {
   background-color: #F4F5F6;
-  border-radius: 15px;
+  border-radius: 16px;
   border: 1px solid #879AA4;
   padding: clamp(16px, 2.5vw, 24px);
 }
 
 .cards-dark {
   background-color: #3E485A;
-  border-radius: 15px;
+  border-radius: 16px;
   border: 1px solid #879AA4;
   padding: clamp(16px, 2.5vw, 24px);
 }
 
 .cards-accent {
   background-color: #FDE10D;
-  border-radius: 15px;
+  border-radius: 16px;
   border: 1px solid #879AA4;
   padding: clamp(16px, 2.5vw, 24px);
+}
+
+/* Rounded Classes */
+.rounded-xs {
+  border-radius: 12px;
+}
+
+.rounded-m {
+  border-radius: 16px;
+}
+
+.rounded-l {
+  border-radius: 24px;
+}
+
+.rounded-xl {
+  border-radius: 32px;
 }
 
 /* Scrollbar Hide */
@@ -338,6 +347,45 @@
   --ring: 212.7 26.8% 83.9%;
 }
 
+/* Max Width based on columns */
+/* Uwzględnia gap-5 (20px) między kolumnami */
+.max-w-col-1 { max-width: calc((100% - 11 * 20px) / 12 * 1 + 0 * 20px); }
+.max-w-col-2 { max-width: calc((100% - 11 * 20px) / 12 * 2 + 1 * 20px); }
+.max-w-col-3 { max-width: calc((100% - 11 * 20px) / 12 * 3 + 2 * 20px); }
+.max-w-col-4 { max-width: calc((100% - 11 * 20px) / 12 * 4 + 3 * 20px); }
+.max-w-col-5 { max-width: calc((100% - 11 * 20px) / 12 * 5 + 4 * 20px); }
+.max-w-col-6 { max-width: calc((100% - 11 * 20px) / 12 * 6 + 5 * 20px); }
+.max-w-col-7 { max-width: calc((100% - 11 * 20px) / 12 * 7 + 6 * 20px); }
+.max-w-col-8 { max-width: calc((100% - 11 * 20px) / 12 * 8 + 7 * 20px); }
+.max-w-col-9 { max-width: calc((100% - 11 * 20px) / 12 * 9 + 8 * 20px); }
+.max-w-col-10 { max-width: calc((100% - 11 * 20px) / 12 * 10 + 9 * 20px); }
+.max-w-col-11 { max-width: calc((100% - 11 * 20px) / 12 * 11 + 10 * 20px); }
+.max-w-col-12 { max-width: calc((100% - 11 * 20px) / 12 * 12 + 11 * 20px); }
+
+/* Odpowiedniki dla max-w-xl, max-w-2xl, max-w-3xl */
+.max-w-col-l { max-width: calc((100% - 220px) / 12 * 2 + 20px); } /* 2 kolumny z 12 (1 gap) */
+.max-w-col-xl { max-width: calc((100% - 220px) / 12 * 4 + 60px); } /* 4 kolumny z 12 (3 gapy) */
+.max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 6 + 100px); } /* 6 kolumn z 12 (5 gapów) */
+.max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 8 + 140px); } /* 8 kolumn z 12 (7 gapów) */
+.max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); } /* 10 kolumn z 12 (9 gapów) */
+
+/* Responsywne warianty */
+@media (max-width: 768px) {
+  .max-w-col-l { max-width: calc((100% - 220px) / 12 * 8 + 140px); }
+  .max-w-col-xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); }
+  .max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 11 + 200px); }
+  .max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+  .max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .max-w-col-l { max-width: calc((100% - 220px) / 12 * 4 + 60px); }
+  .max-w-col-xl { max-width: calc((100% - 220px) / 12 * 6 + 100px); }
+  .max-w-col-2xl { max-width: calc((100% - 220px) / 12 * 8 + 140px); }
+  .max-w-col-3xl { max-width: calc((100% - 220px) / 12 * 10 + 180px); }
+  .max-w-col-4xl { max-width: calc((100% - 220px) / 12 * 12 + 220px); }
+}
+
 /* Infinite Scroll Animation */
 @keyframes scroll-infinite {
   0% {
@@ -351,4 +399,47 @@
 .animate-scroll-infinite {
   animation: scroll-infinite 30s linear infinite;
   width: max-content;
+}
+
+/* Custom utility class to override text-transform */
+.text-transform-none {
+  text-transform: none !important;
+}
+
+/* Sfera mapy */
+.sphere-gradient {
+  background: radial-gradient(circle at center, transparent 0%, transparent 50%, rgba(29, 31, 35, 0.3) 100%);
+}
+
+.map-mask {
+  mask-image: url('/images/svg/map.svg');
+  mask-size: 130% 130%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('/images/svg/map.svg');
+  -webkit-mask-size: 130% 130%;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Okrągła maska dla sfery */
+.sphere-mask {
+  mask: circle(50% at center);
+  -webkit-mask: circle(50% at center);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Z-index dla pinezek */
+.map-pin-selected {
+  z-index: 50 !important;
+}
+
+.map-pin-normal {
+  z-index: 40 !important;
+}
+
+/* Hover pinezki - na wierzchu */
+.map-pin:hover {
+  z-index: 100 !important;
 }

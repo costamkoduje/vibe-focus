@@ -7,7 +7,7 @@ import {
   CareerSection,
   TeamSection,
   ProfessionalismSection
-} from "@/components/sections";
+} from "@/components";
 
 export const metadata: Metadata = {
   title: "O nas - Focus Electro | Historia i doświadczenie w branży morskiej",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Figtree } from "next/font/google";
 import "./globals.css";
-import "@/assets/styles/design-system.css";
+import { I18nProvider } from "@/components/providers/I18nProvider";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -51,7 +51,9 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${inter.variable} ${figtree.variable}`}>
       <body className={`${inter.className} antialiased bg-gray-mid`}>
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

@@ -1,204 +1,244 @@
-# Plan Optymalizacji i Poprawy Kodu - FocusElectro
+# Plan Optymalizacji Strony Focus Electro
 
-## 🔍 Analiza Obecnego Stanu
+## 📊 Analiza Obecnego Stanu
 
 ### ✅ Mocne Strony
-- **Architektura Next.js 15**: Nowoczesny App Router z Server Components
-- **System Projektowania**: Kompletny design system z responsywną typografią
-- **Konfiguracja TypeScript**: Strict mode włączony z dobrą konfiguracją paths
-- **Performance Config**: Optymalizacje obrazów, bundle splitting, standalone output
-- **Bezpieczeństwo**: Security headers w next.config.ts
+- Dobrze zorganizowana struktura komponentów
+- System designu z Tailwind CSS i custom classes
+- Responsywne typography z clamp()
+- Grid system 12-kolumnowy
+- System kolorów i gradientów
+- Komponenty UI (buttons, cards, navigation)
 
-### ⚠️ Problemy do Rozwiązania
+### ⚠️ Obszary Wymagające Optymalizacji
 
-#### 1. Performance i Obrazy
-- **39MB** obrazów w `public/images/` (64 plików)
-- Wszystkie `<img>` powinny być zastąpione `<Image />` z next/image
-- Brak optymalizacji lazy loading
-- Duże obrazy bez responsywnych wariantów
+## 🎯 1. Responsywność i Mobile-First
 
-#### 2. Kod i Linting
-- 15 ostrzeżeń ESLint (głównie next/no-img-element)
-- 3 nieużywane importy w page.tsx
-- Nieużywane zmienne (`isPlHovered`, `activeTab`)
-- Duplikacja CSS w globals.css i design-system.css
+### Problemy Zidentyfikowane:
+- **InteractiveMap**: Brak responsywności na małych ekranach
+- **HeroSection**: Wysokość `calc(100vh - 100px)` może powodować problemy na mobile
+- **Navigation**: Mobile menu może być lepiej zoptymalizowane
+- **ProjectsSection**: Carousel może nie działać optymalnie na touch devices
 
-#### 3. Architektura Komponentów
-- Mieszanie client components z server components
-- Brak typów TypeScript dla props komponentów
-- Hardcoded style properties zamiast CSS classes
-- Brak error boundaries
-
-## 📋 Plan Optymalizacji
-
-### Faza 1: Image Optimization (Krytyczne dla Performance)
-**Priorytet: WYSOKI**
-
-1. **Migracja do next/image**
-   - [ ] Zastąp wszystkie `<img>` tagami `<Image />` w:
-     - `src/components/ui/navigation.tsx` (3 miejsca)
-     - `src/components/sections/hero/HeroAbout.tsx`
-     - `src/components/sections/hero/HeroCareer.tsx`
-     - `src/components/sections/CareerSection.tsx`
-     - `src/components/sections/ProjectsSection.tsx` (2 miejsca)
-     - `src/components/sections/StandardSection.tsx` (5 miejsc)
-     - `src/components/sections/content/AboutSection.tsx` (2 miejsca)
-     - `src/components/sections/DarkImageSection.tsx`
-     - `src/components/sections/ProfessionalismSection.tsx`
-
-2. **Optymalizacja Obrazów**
-   - [ ] Kompresja obrazów (WebP/AVIF conversion)
-   - [ ] Responsywne rozmiary obrazów
-   - [ ] Proper `priority` flag dla above-the-fold obrazów
-   - [ ] Lazy loading dla pozostałych obrazów
-
-### Faza 2: Code Quality (Średni Priorytet)
-**Priorytet: ŚREDNI**
-
-3. **Cleanup Nieużywanego Kodu**
-   - [ ] Usuń nieużywane importy w `src/app/page.tsx`:
-     - `CallToActionSection`
-     - `FooterSection`  
-     - `TableSection`
-   - [ ] Usuń nieużywane zmienne:
-     - `isPlHovered` w navigation.tsx
-     - `activeTab` w ContactHeroSection.tsx
-
-4. **TypeScript Improvements**
-   - [ ] Dodaj interface/type definitions dla props komponentów
-   - [ ] Dodaj proper return types dla wszystkich funkcji
-   - [ ] Włącz strict null checks w tsconfig.json
-
-5. **CSS Consolidation**
-   - [ ] Usuń duplikację między globals.css i design-system.css
-   - [ ] Przenieś wszystkie helper classes do design-system.css
-   - [ ] Zmień inline styles na CSS classes gdzie możliwe
-
-### Faza 3: Architecture Improvements (Długoterminowe)
-**Priorytet: NISKI-ŚREDNI**
-
-6. **Component Architecture**
-   - [ ] Separacja Client/Server Components
-   - [ ] Dodanie Error Boundaries
-   - [ ] Utworzenie custom hooks dla shared logic
-   - [ ] Refactoring dużych komponentów na mniejsze
-
-7. **Performance Enhancements**
-   - [ ] Implementacja React.memo dla expensive components
-   - [ ] Code splitting dla większych sekcji
-   - [ ] Preloading dla krytycznych zasobów
-   - [ ] Bundle analysis i tree-shaking improvements
-
-### Faza 4: Developer Experience (Długoterminowe)
-**Priorytet: NISKI**
-
-8. **Testing Setup**
-   - [ ] Dodanie Jest + React Testing Library
-   - [ ] Unit testy dla utility functions
-   - [ ] Component testing dla UI components
-   - [ ] E2E testing setup (Playwright/Cypress)
-
-9. **Development Tools**
-   - [ ] Prettier configuration
-   - [ ] Husky pre-commit hooks
-   - [ ] GitHub Actions CI/CD
-   - [ ] Storybook dla component documentation
-
-### Faza 5: Advanced Optimizations
-**Priorytet: NISKI**
-
-10. **SEO & Accessibility**
-    - [ ] Structured data (JSON-LD)
-    - [ ] Sitemap generation
-    - [ ] Robot.txt optimization
-    - [ ] ARIA labels i accessibility audit
-    - [ ] Lighthouse performance audit
-
-11. **Advanced Next.js Features**
-    - [ ] Static generation gdzie możliwe
-    - [ ] Dynamic imports dla non-critical components
-    - [ ] Service Worker implementation
-    - [ ] PWA capabilities
-
-## 🎯 Immediate Action Items (Pierwsze 2 Tygodnie)
-
-### Week 1: Critical Fixes
-1. **Image Migration** - Zastąp wszystkie `<img>` na `<Image />`
-2. **ESLint Cleanup** - Napraw wszystkie warnings
-3. **CSS Consolidation** - Usuń duplikację stylów
-
-### Week 2: Quality Improvements  
-1. **TypeScript Types** - Dodaj missing interfaces
-2. **Component Refactoring** - Separacja client/server components
-3. **Performance Audit** - Lighthouse analysis i pierwsze optymalizacje
-
-## 📊 Metryki Sukcesu
-
-### Performance
-- [ ] Lighthouse Performance Score > 90
-- [ ] First Contentful Paint < 2s
-- [ ] Largest Contentful Paint < 2.5s
-- [ ] Bundle size reduction > 20%
-
-### Code Quality
-- [ ] 0 ESLint warnings/errors
-- [ ] 100% TypeScript coverage
-- [ ] Test coverage > 80% (po implementacji testów)
-
-### User Experience
-- [ ] Wszystkie obrazy z proper alt text
-- [ ] Accessibility score > 95
-- [ ] Mobile responsiveness 100%
-
-## 🔧 Tools i Scripts
-
-### Nowe Scripts do Dodania
-```json
-{
-  "scripts": {
-    "analyze": "npx @next/bundle-analyzer",
-    "lighthouse": "npx lighthouse http://localhost:3000",
-    "prettier": "prettier --write .",
-    "prettier:check": "prettier --check .",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
-  }
-}
+### Plan Naprawy:
+```tsx
+// Przykład optymalizacji InteractiveMap
+const InteractiveMap: React.FC = () => {
+  return (
+    <div className="bg-gray-dark rounded-xl relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[70vh]">
+      {/* Responsywna sfera */}
+      <div className="relative w-[80vw] h-[80vw] sm:w-[70vh] sm:h-[70vh] md:w-[90vh] md:h-[90vh]">
+        {/* ... */}
+      </div>
+    </div>
+  );
+};
 ```
 
-### Recommended Dependencies
-```json
-{
-  "devDependencies": {
-    "prettier": "^3.0.0",
-    "@next/bundle-analyzer": "^15.0.0",
-    "jest": "^29.0.0",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.0.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.0.0"
-  }
-}
+## 🚀 2. Performance i Optymalizacja
+
+### Problemy:
+- **Duplikacja projektów**: `infiniteProjects` tworzy 3x więcej elementów DOM
+- **Brak lazy loading** dla obrazów
+- **Brak optymalizacji** dla animacji CSS
+- **Brak debounce** dla mouse events w InteractiveMap
+
+### Rozwiązania:
+```tsx
+// Lazy loading dla ProjectsSection
+const ProjectCard = React.lazy(() => import('./ProjectCard'));
+
+// Debounce dla mouse events
+const useDebounce = (value: any, delay: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  
+  return debouncedValue;
+};
 ```
 
-## 💡 Implementacja
+## 📱 3. Mobile UX
 
-### Kolejność Realizacji
-1. **Start**: Image optimization (największy impact na performance)
-2. **Follow**: Code cleanup (ESLint warnings)
-3. **Then**: TypeScript improvements
-4. **Finally**: Advanced features i testing
+### Problemy:
+- **Touch targets** mogą być za małe
+- **Swipe gestures** nie są zaimplementowane
+- **Viewport height** na mobile (vh może być problematyczne)
 
-### Estimated Timeline
-- **Faza 1**: 3-5 dni
-- **Faza 2**: 1 tydzień  
-- **Faza 3**: 2-3 tygodnie
-- **Faza 4**: 1-2 tygodnie
-- **Faza 5**: 1-2 tygodnie
+### Rozwiązania:
+```tsx
+// Touch-friendly buttons
+<button className="min-h-[44px] min-w-[44px] touch-manipulation">
+  {/* content */}
+</button>
 
-**Total**: 6-9 tygodni dla pełnej optymalizacji
+// Swipe support dla ProjectsSection
+const useSwipe = (ref: RefObject<HTMLElement>) => {
+  const [startX, setStartX] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
+  
+  const handleTouchStart = (e: TouchEvent) => {
+    setStartX(e.touches[0].clientX);
+  };
+  
+  const handleTouchMove = (e: TouchEvent) => {
+    setCurrentX(e.touches[0].clientX);
+  };
+  
+  const handleTouchEnd = () => {
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        scrollRight();
+      } else {
+        scrollLeft();
+      }
+    }
+  };
+  
+  return { handleTouchStart, handleTouchMove, handleTouchEnd };
+};
+```
+
+## 🎨 4. Animacje i Transitions
+
+### Obecny Stan:
+- Podstawowe transitions (hover, scale)
+- Brak zaawansowanych animacji
+- Brak animacji na scroll
+
+### Plan Implementacji:
+```tsx
+// Intersection Observer dla animacji na scroll
+const useIntersectionObserver = (options = {}) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [ref, setRef] = useState<HTMLElement | null>(null);
+  
+  useEffect(() => {
+    if (!ref) return;
+    
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, options);
+    
+    observer.observe(ref);
+    return () => observer.disconnect();
+  }, [ref, options]);
+  
+  return [setRef, isIntersecting];
+};
+
+// Animowane sekcje
+const AnimatedSection = ({ children, className = "" }) => {
+  const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  });
+  
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 ease-out ${
+        isVisible 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-10"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
+```
+
+## 🔧 5. Techniczne Optymalizacje
+
+### Bundle Size:
+- **Tree shaking** dla Tailwind CSS
+- **Code splitting** dla komponentów
+- **Dynamic imports** dla ciężkich komponentów
+
+### Image Optimization:
+```tsx
+// Next.js Image z lepszymi sizes
+<Image
+  src={image}
+  alt={alt}
+  fill
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  priority={isPriority}
+  loading={isPriority ? "eager" : "lazy"}
+/>
+```
+
+## 📋 6. Plan Implementacji (Priorytet)
+
+### Faza 1 - Krytyczne (1-2 tygodnie):
+1. ✅ Naprawa responsywności InteractiveMap
+2. ✅ Optymalizacja ProjectsSection carousel
+3. ✅ Poprawa mobile navigation
+4. ✅ Lazy loading dla obrazów
+
+### Faza 2 - Ważne (2-3 tygodnie):
+1. 🎯 Implementacja animacji na scroll
+2. 🎯 Swipe gestures dla mobile
+3. 🎯 Performance optimizations
+4. 🎯 Touch-friendly interactions
+
+### Faza 3 - Ulepszenia (3-4 tygodnie):
+1. 🚀 Zaawansowane animacje
+2. 🚀 Micro-interactions
+3. 🚀 Accessibility improvements
+4. 🚀 SEO optimizations
+
+## 🧪 7. Testowanie
+
+### Narzędzia:
+- **Lighthouse** - Performance, Accessibility, SEO
+- **Chrome DevTools** - Mobile simulation
+- **React DevTools** - Component performance
+- **WebPageTest** - Real device testing
+
+### Metryki do Monitorowania:
+- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
+- Cumulative Layout Shift (CLS)
+- Time to Interactive (TTI)
+
+## 📚 8. Przydatne Biblioteki
+
+### Animacje:
+- **Framer Motion** - Zaawansowane animacje
+- **GSAP** - High-performance animations
+- **Lottie** - After Effects animations
+
+### Performance:
+- **React Query** - Data fetching
+- **React Virtual** - Virtual scrolling
+- **React Window** - Windowing dla dużych list
+
+### Mobile:
+- **React Swipeable** - Swipe gestures
+- **React Touch Events** - Touch handling
+
+## 🎯 9. Cel Końcowy
+
+Strona powinna:
+- ✅ Działać płynnie na wszystkich urządzeniach
+- ✅ Mieć responsywny design mobile-first
+- ✅ Wykazywać się wysokim performance score
+- ✅ Zawierać płynne animacje i transitions
+- ✅ Być w pełni accessible
+- ✅ Mieć zoptymalizowane obrazy i bundle
 
 ---
 
-*Plan utworzony w oparciu o analizę kodu z dnia 2025-08-29*
+**Następny krok**: Rozpoczęcie implementacji Fazy 1 - naprawa responsywności InteractiveMap i ProjectsSection.
+

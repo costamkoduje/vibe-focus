@@ -1,0 +1,53 @@
+<svg width="615" height="420" viewBox="0 0 615 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line opacity="0.5" x1="215" y1="89.5" x2="402" y2="89.5" stroke="#CAD3D7" stroke-dasharray="2 2"/>
+<line opacity="0.5" x1="215" y1="329.5" x2="402" y2="329.5" stroke="#CAD3D7" stroke-dasharray="2 2"/>
+<line opacity="0.5" x1="215" y1="269.5" x2="402" y2="269.5" stroke="#CAD3D7" stroke-dasharray="2 2"/>
+<line opacity="0.5" x1="215" y1="149.5" x2="402" y2="149.5" stroke="#CAD3D7" stroke-dasharray="2 2"/>
+<circle cx="395" cy="210" r="60" fill="#CAD3D7"/>
+<circle opacity="0.5" cx="395" cy="210" r="119.5" stroke="#CAD3D7"/>
+<circle cx="215" cy="210" r="60" fill="#CAD3D7"/>
+<circle opacity="0.5" cx="215" cy="210" r="119.5" stroke="#CAD3D7"/>
+<ellipse cx="386.625" cy="210.264" rx="1.75551" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="401.985" cy="218.455" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="411.202" cy="218.455" rx="1.75551" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="382.973" cy="218.455" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="400.236" cy="202.947" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="408.428" cy="202.947" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="416.618" cy="202.947" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="392.041" cy="202.947" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="409.304" cy="186.561" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="400.236" cy="186.561" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="403.013" cy="233.967" rx="1.75551" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="393.795" cy="233.967" rx="1.9018" ry="1.75589" fill="#879AA4"/>
+<ellipse cx="396.577" cy="209.653" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="404.77" cy="209.653" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="412.959" cy="209.653" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="379.317" cy="209.653" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="392.043" cy="217.849" rx="2.77956" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="374.78" cy="217.849" rx="2.77956" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="382.969" cy="202.341" rx="2.77956" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="403.894" cy="194.146" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="394.673" cy="194.146" rx="2.77956" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="386.63" cy="194.146" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="390.288" cy="185.95" rx="2.77956" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="412.086" cy="178.78" rx="2.63327" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="402.863" cy="178.78" rx="2.77956" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="394.673" cy="178.78" rx="2.77956" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="397.456" cy="241.405" rx="2.63327" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="388.388" cy="241.405" rx="2.63327" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="380.192" cy="241.405" rx="2.63327" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="383.854" cy="233.214" rx="2.77956" ry="2.78016" fill="#3E485A"/>
+<ellipse cx="405.645" cy="226.044" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="396.577" cy="226.044" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<ellipse cx="388.388" cy="226.044" rx="2.63327" ry="2.63384" fill="#3E485A"/>
+<path d="M176 209.859H244L237.871 228.209H186.215L176 209.859Z" stroke="#3E485A" stroke-width="2" stroke-linejoin="bevel"/>
+<path d="M190.167 209.859H235.5L231.414 201.224H194.889L190.167 209.859Z" stroke="#3E485A" stroke-width="2" stroke-linejoin="bevel"/>
+<path d="M202.113 195.289H228.916L231.048 201.226H200.286L202.113 195.289Z" stroke="#3E485A" stroke-width="2" stroke-linejoin="bevel"/>
+<path d="M219.399 195.289H224.571L225.651 188.003H220.524L219.399 195.289Z" stroke="#3E485A" stroke-width="2" stroke-linejoin="bevel"/>
+<path d="M209.73 195.289H214.903L215.982 188.003H210.855L209.73 195.289Z" stroke="#3E485A" stroke-width="2" stroke-linejoin="bevel"/>
+<circle opacity="0.5" cx="235.635" cy="216.877" r="1.61905" fill="#3E485A"/>
+<circle opacity="0.5" cx="223.762" cy="206.084" r="1.61905" fill="#3E485A"/>
+<circle opacity="0.5" cx="215.667" cy="206.084" r="1.61905" fill="#3E485A"/>
+<circle opacity="0.5" cx="207.032" cy="206.084" r="1.61905" fill="#3E485A"/>
+<circle opacity="0.5" cx="198.397" cy="206.084" r="1.61905" fill="#3E485A"/>
+</svg>

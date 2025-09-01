@@ -5,7 +5,7 @@ import {
   ProjectsMapsSection,
   ProjectsTableSection,
   ProjectsSection,
-} from "@/components/sections";
+} from "@/components";
 
 export const metadata: Metadata = {
   title: "Projekty - Focus Electro | Realizowane inwestycje morskie",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="flex flex-col w-full items-center gap-5 pt-0 pb-5 px-0 bg-[#879aa4]">
+    <main className="flex flex-col w-full items-center gap-5 pt-0 px-0 bg-gray-mid">
       <ProjectsMapsSection />
       <ProjectsSection />
       <ProjectsTableSection />

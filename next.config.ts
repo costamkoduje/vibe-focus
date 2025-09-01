@@ -5,8 +5,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
-      '@radix-ui/react-navigation-menu',
-      '@radix-ui/react-slot',
       'lucide-react',
       'gsap'
     ],

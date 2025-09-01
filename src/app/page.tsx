@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import {
   AboutSection,
@@ -8,8 +10,8 @@ import {
   StatsSection,
   ProcessSection,
   AllFooterSection,
-} from "@/components/sections";
-import { GridDebugger, Navigation } from "@/components/ui";
+} from "@/components";
+import { GridDebugger, Navigation } from "@/components";
 
 export default function Home() {
   return (

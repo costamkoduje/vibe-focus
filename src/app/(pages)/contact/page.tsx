@@ -1,6 +1,5 @@
 import React from "react";
-import { ContactHeroSection } from "@/components/sections/ContactHeroSection";
-import { AllFooterSection } from "@/components/sections/common/AllFooterSection";
+import { ContactHeroSection, AllFooterSection } from "@/components";
 
 export default function ContactPage(): React.JSX.Element {
   return (

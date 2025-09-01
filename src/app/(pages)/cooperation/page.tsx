@@ -4,9 +4,9 @@ import {
   AllFooterSection,
   HeroCoWorkSection,
   CoWorkOptionsSection,
-  ImageSection,
-  ProjectsMapsSection
-} from "@/components/sections";
+  ImageSection2,
+  ProjectsMapsSection2
+} from "@/components";
 
 export const metadata: Metadata = {
   title: "Współpraca - Focus Electro | Partnerzy biznesowi",
@@ -19,8 +19,8 @@ export default function CoWorkPage() {
     <>
       <HeroCoWorkSection />
       <CoWorkOptionsSection />
-      <ImageSection />
-      <ProjectsMapsSection />
+      <ImageSection2 />
+      <ProjectsMapsSection2 />
       <AllFooterSection />
     </>
   );

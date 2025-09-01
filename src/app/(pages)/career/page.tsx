@@ -7,7 +7,7 @@ import {
   DarkImageSection,
   StandardSection,
   AllFooterSection
-} from "@/components/sections";
+} from "@/components";
 
 export const metadata: Metadata = {
   title: "Kariera - Focus Electro | Dołącz do naszego zespołu",

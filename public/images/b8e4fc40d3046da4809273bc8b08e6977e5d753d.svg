@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Container">
+<rect width="18" height="19.5038" rx="5" fill="var(--fill-0, #879AA4)"/>
+<path id="Pin" fill-rule="evenodd" clip-rule="evenodd" d="M9 5C11.2089 5.00026 13 6.79102 13 9C13 11.2085 9.50167 14.6318 9 14.5C8.5 14.634 5 11.2091 5 9C5 6.79086 6.79086 5 9 5ZM9 8C8.44772 8 8 8.44772 8 9C8 9.55228 8.44772 10 9 10C9.55206 9.99974 10 9.55212 10 9C10 8.44788 9.55206 8.00026 9 8Z" fill="var(--fill-0, #FDE10D)"/>
+</g>
+</svg>
