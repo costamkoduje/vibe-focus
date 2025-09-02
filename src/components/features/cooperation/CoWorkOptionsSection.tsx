@@ -22,8 +22,8 @@ export const CoWorkOptionsSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 pb-20 relative bg-gray-mid rounded-l mt-5">
-      <div className="flex flex-col items-center gap-16 w-full py-20">
+    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 md:pb-20 pb-0 relative bg-gray-mid rounded-l mt-5">
+      <div className="flex flex-col items-center gap-16 w-full md:py-20 py-0">
         <div className="flex flex-col items-center gap-16 w-full">
           {/* Header */}
           <header className="text-center">
@@ -38,13 +38,12 @@ export const CoWorkOptionsSection = (): React.JSX.Element => {
             </p>
           </header>
 
-          {/* CoWork Cards Grid - 8 columns width */}
+          {/* CoWork Cards Grid - responsywny */}
           <div className="w-full">
-            <div className="grid grid-cols-12 gap-5 mx-0">
-              {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
-              {/* Main content - 8 columns */}
-              <div className="col-span-8">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 mx-0">
+              {/* Na mobile: pełna szerokość, na desktop: centrowanie z pustymi przestrzeniami */}
+              <div className="md:col-span-2"></div>
+              <div className="md:col-span-8">
                 <div className="bg-gray-light rounded-l">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-1 p-1">
                     {coWorkData.map((option, index) => (
@@ -83,8 +82,7 @@ export const CoWorkOptionsSection = (): React.JSX.Element => {
                   </div>
                 </div>
               </div>
-              {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="md:col-span-2"></div>
             </div>
           </div>
         </div>

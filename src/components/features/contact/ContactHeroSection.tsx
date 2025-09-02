@@ -64,21 +64,21 @@ export const ContactHeroSection = (): React.JSX.Element => {
   };
 
           return (
-      <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-l pt-10 mt-5 min-h-[calc(100vh-130px)] mb-5">
+      <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark md:rounded-2xl pt-10 mt-5 min-h-[calc(100vh-130px)] mb-0 md:mb-5">
         <div className="flex flex-col items-center gap-16 w-full flex-1 justify-center">
           <div className="flex flex-col items-center gap-16 w-full">
           {/* Contact Content Grid - 8 columns width */}
           <div className="w-full">
             <div className="grid grid-cols-12 gap-5 mx-0">
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="hidden md:block col-span-2"></div>
               {/* Main content - 8 columns */}
-              <div className="col-span-8">
+              <div className="col-span-12 md:col-span-8">
                 <div className="grid grid-cols-8 gap-8">
                   {/* Lewa strona - 4 kolumny z tekstem */}
-                  <div className="col-span-4">
+                  <div className="col-span-8 md:col-span-4  px-10 md:px-0">
                     <div className="mb-8">
-                      <h3 className="fonts-mono-m text-gray-light uppercase mb-4">
+                      <h3 className="fonts-mono-m text-gray-light uppercase mb-4 ">
                       {translations.contactPage?.hero?.subtitle2 || "(Skontaktuj się)"}
                       </h3>
                     </div>
@@ -97,7 +97,7 @@ export const ContactHeroSection = (): React.JSX.Element => {
                   </div>
                   
                   {/* Prawa strona - 4 kolumny z formularzem */}
-                  <div className="col-span-4">
+                  <div className="col-span-8 md:col-span-4">
                     <div className="bg-gray-light rounded-l p-8">
                       {/* Zakładki */}
                       <div className="flex mb-8 bg-gray-mid p-1 rounded-l">
@@ -248,19 +248,19 @@ export const ContactHeroSection = (): React.JSX.Element => {
                 </div>
               </div>
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="hidden md:block col-span-2"></div>
             </div>
           </div>
         </div>
       </div>
       
               {/* Footer z logo i napisem */}
-        <div className="w-full my-10">
-        <div className="grid grid-cols-12 gap-5 mx-0">
+        <div className="w-full md:w-[calc(100%-2.5rem)] mx-aut">
+        <div className="grid grid-cols-12 gap-5 mx-0  px-10 md:px-0">
           {/* Empty space for centering - 2 columns */}
-          <div className="col-span-2"></div>
+          <div className="hidden md:block col-span-2"></div>
           {/* Main content - 8 columns */}
-          <div className="col-span-8">
+          <div className="col-span-12 md:col-span-8">
             {/* Dolna część z logo i tekstem */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               {/* Logo i nazwa */}
@@ -286,7 +286,7 @@ export const ContactHeroSection = (): React.JSX.Element => {
             </div>
           </div>
           {/* Empty space for centering - 2 columns */}
-          <div className="col-span-2"></div>
+          <div className="hidden md:block col-span-2"></div>
         </div>
       </div>
     </section>
