@@ -97,7 +97,7 @@ export const AboutSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 pb-20 relative bg-gray-dark rounded-l mt-5">
+    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] md:mx-auto items-center gap-16 pb-20 relative bg-gray-dark md:rounded-l mt-5">
       <div className="flex flex-col items-center gap-16 w-full py-20">
         <div className="flex flex-col items-center gap-16 w-full">
           {/* Header */}
@@ -113,7 +113,7 @@ export const AboutSection = (): React.JSX.Element => {
                 </React.Fragment>
               ))}
             </h2>
-            <p className="fonts-mono-m text-gray-light leading-relaxed uppercase max-w-col-3xl mx-auto">
+            <p className="fonts-mono-m text-gray-light leading-relaxed uppercase max-w-col-xl mx-auto md:max-w-col-3xl">
               {translations.aboutSection.description.split('<br/>').map((line, index) => (
                 <React.Fragment key={index}>
                   {line}
@@ -147,7 +147,7 @@ export const AboutSection = (): React.JSX.Element => {
                         </div>
 
                         {/* Image - między numerem a tytułem na mobile */}
-                        <div className={`relative w-full h-[180px] md:h-full rounded-l overflow-hidden md:col-span-3 ${service.textPosition === "right" ? "md:order-first" : ""}`}>
+                        <div className={`relative w-full h-[280px] md:h-full rounded-l overflow-hidden md:col-span-3 ${service.textPosition === "right" ? "md:order-first" : ""}`}>
                           <Image 
                             src={service.image} 
                             alt={service.title}

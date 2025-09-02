@@ -38,7 +38,7 @@ export const FilarSection = (): React.JSX.Element => {
     if (typeof window === 'undefined') return;
     
     // Dynamic import GSAP
-    const { gsap } = await import('gsap');
+    const gsap = await import('gsap');
     
     // GSAP animation
     if (containerRef.current && cardsRef.current.length > 0) {
@@ -49,7 +49,7 @@ export const FilarSection = (): React.JSX.Element => {
                           index === 1 ? (i === 1 ? 1 : 0.2) : 
                           (i === 2 ? 1 : 0.2);
         
-        gsap.to(card, {
+        gsap.default.to(card, {
           flex: targetFlex,
           duration: 0.5,
           ease: "power2.out"
@@ -63,7 +63,7 @@ export const FilarSection = (): React.JSX.Element => {
         const collapsedIcon = card.querySelector('.collapsed-icon') as HTMLElement;
         
         if (descriptionContent) {
-          gsap.to(descriptionContent, {
+          gsap.default.to(descriptionContent, {
             opacity: i === index ? 1 : 0,
             duration: 0.3,
             delay: i === index ? 0.1 : 0
@@ -71,7 +71,7 @@ export const FilarSection = (): React.JSX.Element => {
         }
         
         if (imageSection) {
-          gsap.to(imageSection, {
+          gsap.default.to(imageSection, {
             opacity: i === index ? 1 : 0,
             duration: 0.3,
             delay: i === index ? 0.1 : 0
@@ -79,7 +79,7 @@ export const FilarSection = (): React.JSX.Element => {
         }
         
         if (collapsedIcon) {
-          gsap.to(collapsedIcon, {
+          gsap.default.to(collapsedIcon, {
             opacity: i === index ? 0 : 1,
             duration: 0.3,
             delay: i === index ? 0 : 0.1
@@ -95,14 +95,14 @@ export const FilarSection = (): React.JSX.Element => {
     
     // Dynamic import GSAP
     const initGSAP = async () => {
-      const { gsap } = await import('gsap');
+      const gsap = await import('gsap');
       
       // Initialize GSAP animation
       if (containerRef.current && cardsRef.current.length > 0) {
         const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
         
         cards.forEach((card, i) => {
-          gsap.set(card, {
+          gsap.default.set(card, {
             flex: i === 0 ? 1 : 0.2
           });
         });
@@ -114,19 +114,19 @@ export const FilarSection = (): React.JSX.Element => {
           const collapsedIcon = card.querySelector('.collapsed-icon') as HTMLElement;
           
           if (descriptionContent) {
-            gsap.set(descriptionContent, {
+            gsap.default.set(descriptionContent, {
               opacity: i === 0 ? 1 : 0
             });
           }
           
           if (imageSection) {
-            gsap.set(imageSection, {
+            gsap.default.set(imageSection, {
               opacity: i === 0 ? 1 : 0
             });
           }
           
           if (collapsedIcon) {
-            gsap.set(collapsedIcon, {
+            gsap.default.set(collapsedIcon, {
               opacity: i === 0 ? 0 : 1
             });
           }
@@ -160,7 +160,7 @@ export const FilarSection = (): React.JSX.Element => {
           <div className="col-span-12 lg:col-start-3 lg:col-span-8 ">
                           <div 
                 ref={containerRef}
-                className="options-container flex flex-row items-stretch overflow-hidden min-w-full sm:min-w-[500px] lg:min-w-[600px] max-w-full lg:max-w-[940px] w-[calc(100%-2rem)] sm:w-[calc(100%-50px)] lg:w-[calc(100%-100px)] h-[300px] sm:h-[380px] lg:h-[460px] mx-auto rounded-xl bg-gray-light p-1 gap-1"
+                className="options-container flex flex-col sm:flex-row items-stretch overflow-hidden min-w-full sm:min-w-[500px] lg:min-w-[600px] max-w-full lg:max-w-[940px] w-full sm:w-[calc(100%-50px)] lg:w-[calc(100%-100px)] h-auto sm:h-[300px] md:h-[380px] lg:h-[460px] mx-auto rounded-xl bg-gray-light p-1 gap-1"
               >
               {filary.map((filar, index) => (
                 <div

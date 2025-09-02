@@ -45,12 +45,12 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
     <button
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-8 right-8 z-50",
-        "w-20 h-20 rounded-xl",
+        "fixed bottom-5 right-5 z-50",
+        "w-14 h-14 rounded-m",
         "bg-gray-mid border-4 border-gray-dark",
         "flex items-center justify-center",
         "transition-all duration-300 ease-in-out",
-        "hover:bg-accent hover:border-dark",
+        "hover:bg-gray-light hover:border-gray-dark",
 
         "go-top-button",
         isVisible 
@@ -63,9 +63,9 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
       <Image
         src="/images/icons/arrow.svg"
         alt="Strzałka w górę"
-        width={20}
-        height={20}
-        className="transition-colors duration-300 -rotate-90 filter brightness-0 saturate-100 invert-0"
+        width={14}
+        height={14}
+        className="transition-colors duration-300 -rotate-90"
         style={{ filter: 'brightness(0) saturate(100%) invert(24%) sepia(8%) saturate(1038%) hue-rotate(202deg) brightness(94%) contrast(86%)' }}
       />
     </button>

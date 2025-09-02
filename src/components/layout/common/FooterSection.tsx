@@ -8,7 +8,7 @@ export const FooterSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
   
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] items-center relative bg-gray-dark mx-5 rounded-t-[28px]">
+    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] items-center relative bg-gray-dark mx-0 md:mx-5 rounded-t-[28px]">
       {/* Dolna sekcja */}
       <div className="w-full pt-10">
         <div className="w-full">

@@ -45,10 +45,12 @@ export const ProjectsSection = (): React.JSX.Element => {
   // Duplikuj projekty aby utworzyć nieskończoną pętlę
   const infiniteProjects = [...projects, ...projects, ...projects];
 
+  // Responsywne scrollowanie
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
+      const scrollAmount = window.innerWidth <= 640 ? -303 : window.innerWidth <= 768 ? -353 : -423;
       scrollContainerRef.current.scrollBy({
-        left: -423, // 420px szerokość + 3px gap
+        left: scrollAmount,
         behavior: 'smooth'
       });
     }
@@ -56,15 +58,16 @@ export const ProjectsSection = (): React.JSX.Element => {
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
+      const scrollAmount = window.innerWidth <= 640 ? 303 : window.innerWidth <= 768 ? 353 : 423;
       scrollContainerRef.current.scrollBy({
-        left: 423, // 420px szerokość + 3px gap
+        left: scrollAmount,
         behavior: 'smooth'
       });
     }
   };
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-b-[24px] mb-5">
+    <section className="flex flex-col w-full sm:w-[calc(100%-2rem)] lg:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-b-[24px] mb-5">
       <div className="flex flex-col items-center gap-16 w-full py-20">
         {/* Header */}
         <div className="flex flex-col items-center gap-8 pt-5 text-center max-w-4xl mx-auto">
@@ -83,12 +86,17 @@ export const ProjectsSection = (): React.JSX.Element => {
         <div className="w-full relative bg-dark">
           <div 
             ref={scrollContainerRef}
-            className="flex gap-1 py-1 overflow-x-auto scrollbar-hide pl-4"
+            className="flex gap-1 py-1 overflow-x-auto scrollbar-hide pl-4 scroll-smooth touch-pan-x"
+            style={{
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch'
+            }}
           >
             {infiniteProjects.map((project, index) => (
               <div
                 key={`${project.id}-${index}`}
-                className="flex-shrink-0 w-[380px] h-[480px] bg-gray-mid rounded-xl p-5 flex flex-col justify-end relative overflow-hidden"
+                className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[380px] h-[400px] sm:h-[450px] md:h-[480px] bg-gray-mid rounded-xl p-3 sm:p-4 md:p-5 flex flex-col justify-end relative overflow-hidden"
+                style={{ scrollSnapAlign: 'start' }}
               >
                 {/* Background Image */}
                 <Image
@@ -117,21 +125,18 @@ export const ProjectsSection = (): React.JSX.Element => {
 
         {/* Navigation Arrows */}
         <div className="w-full mt-8">
-          <div className="">
-            <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-2"></div>
-              <div className="col-span-2">
-                <div className="bg-gray-mid  rounded-2xl p-1 flex gap-1  w-fit">
-                  <AnimatedNavButton
-                    direction="left"
-                    onClick={scrollLeft}
-                  />
-                  <AnimatedNavButton
-                    direction="right"
-                    onClick={scrollRight}
-                  />
-                </div>
-              </div>
+          <div className="flex justify-center">
+            <div className="bg-gray-mid rounded-2xl p-1 flex gap-1 w-fit">
+              <AnimatedNavButton
+                direction="left"
+                onClick={scrollLeft}
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
+              />
+              <AnimatedNavButton
+                direction="right"
+                onClick={scrollRight}
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
+              />
             </div>
           </div>
         </div>

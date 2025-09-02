@@ -338,7 +338,7 @@ export const InteractiveMap: React.FC = () => {
   return (
     <div 
       ref={mapRef}
-      className="bg-gray-dark rounded-xl relative overflow-hidden h-[60vh]"
+      className="bg-gray-dark rounded-xl relative overflow-hidden h-[30vh] md:h-[60vh]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

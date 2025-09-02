@@ -49,7 +49,7 @@ export const Navigation = (): React.JSX.Element => {
     <div ref={navigationRef} id="navigation" className="flex flex-col w-full relative">
       {/* Mobile Navigation */}
       <div className="flex md:hidden w-full items-center justify-between gap-2 p-3">
-        <Link href="/" className="flex items-center gap-2 bg-gray-dark rounded-m px-4 py-3 hover:bg-gray-dark/80 transition-colors">
+        <Link href="/" className="flex items-center gap-2 bg-gray-dark rounded-m px-4 py-3 hover:bg-gray-dark/80 transition-colors min-h-[44px]">
           <Image className="w-6 h-8" alt="Logo FE" src="/images/icons/logoFE.svg" width={24} height={32} />
           <div className="fonts-mono-l text-gray-light leading-tight">
             {translations.navigation.companyName.split(' ').map((word, index, array) => (
@@ -62,7 +62,7 @@ export const Navigation = (): React.JSX.Element => {
         </Link>
         
         <Button 
-          className="bg-accent hover:bg-accent/90 text-dark rounded-m px-4 py-2 fonts-mono-xs"
+          className="bg-accent hover:bg-accent/90 text-dark rounded-m px-4 py-3 fonts-mono-xs min-h-[44px] min-w-[80px]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? 'ZAMKNIJ' : 'MENU'}
@@ -74,42 +74,42 @@ export const Navigation = (): React.JSX.Element => {
         <div className="md:hidden w-full bg-gray-dark mx-3 rounded-m mt-2 p-4 space-y-3">
           <Link 
             href="/" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             HOME
           </Link>
           <Link 
             href="/about" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             O NAS
           </Link>
           <Link 
             href="/projects" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             {translations.navigation.projects}
           </Link>
           <Link 
             href="/career" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             KARIERA
           </Link>
           <Link 
             href="/cooperation" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             WSPÓŁPRACA
           </Link>
           <Link 
             href="/contact" 
-            className="block fonts-mono-m text-accent bg-accent/10 hover:bg-accent/20 transition-colors py-3 px-4 rounded-xs mt-4"
+            className="block fonts-mono-m text-accent bg-accent/10 hover:bg-accent/20 transition-colors py-3 px-4 rounded-m mt-4 min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             {translations.navigation.menu.contact}
@@ -117,7 +117,7 @@ export const Navigation = (): React.JSX.Element => {
           
           {/* Language switcher */}
           <button 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-2 mt-2"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 mt-4 min-h-[44px] w-full text-left"
             onClick={() => {
               if (isHydrated) {
                 toggleLanguage();
@@ -134,10 +134,10 @@ export const Navigation = (): React.JSX.Element => {
       {/* Desktop Navigation - Grid System 12 kolumn */}
       <div className="hidden md:grid grid-cols-12 gap-1 w-full items-start p-1 relative px-5">
         {/* Logo - 2 kolumny (1-2) */}
-        <Link href="/" className="col-span-2 h-20 flex items-center justify-center gap-2.5 relative bg-gray-dark rounded-m hover:bg-gray-dark/80 transition-colors cursor-pointer group">
-          <Image className="relative w-[35.48px] h-[52px]" alt="Logo FE" src="/images/icons/logoFE.svg" width={35} height={52} />
+        <Link href="/" className="col-span-2 h-16 lg:h-20 flex items-center justify-center gap-2 lg:gap-2.5 relative bg-gray-dark rounded-m hover:bg-gray-dark/80 transition-colors cursor-pointer group">
+          <Image className="relative w-[28px] h-[40px] lg:w-[35.48px] lg:h-[52px]" alt="Logo FE" src="/images/icons/logoFE.svg" width={35} height={52} />
 
-          <div className="relative w-fit fonts-mono-l text-gray-light group-hover:text-gray-light">
+          <div className="relative w-fit fonts-mono-m lg:fonts-mono-l text-gray-light group-hover:text-gray-light">
             {translations.navigation.companyName.split(' ').map((word, index, array) => (
               <React.Fragment key={index}>
                 {word}
@@ -150,7 +150,7 @@ export const Navigation = (): React.JSX.Element => {
         {/* Realizacje - 2 kolumny (3-4) */}
         <Link 
           href="/projects" 
-          className={`col-span-2 h-20 flex justify-center gap-2.5 bg-gray-dark rounded-m overflow-hidden items-center relative cursor-pointer group ${
+          className={`col-span-2 h-16 lg:h-20 flex justify-center gap-2 lg:gap-2.5 bg-gray-dark rounded-m overflow-hidden items-center relative cursor-pointer group ${
             isRealizacjePage ? "bg-gray-dark/80" : "hover:bg-gray-dark/80"
           }`}
           onMouseEnter={() => setIsHovered(true)}
@@ -163,7 +163,7 @@ export const Navigation = (): React.JSX.Element => {
           </div>
 
           <Image 
-            className="relative w-3.5 h-3.5 transition-all duration-300" 
+            className="relative w-3 h-3 lg:w-3.5 lg:h-3.5 transition-all duration-300" 
             alt="Dot" 
             src={isRealizacjePage || isHovered ? "/images/icons/dot-light.svg" : "/images/icons/dot.svg"} 
             width={14} height={14}
@@ -171,13 +171,13 @@ export const Navigation = (): React.JSX.Element => {
         </Link>
 
         {/* Środkowe menu - 5 kolumn (5-9) */}
-        <div className="col-span-5 h-20 flex items-center justify-center gap-10 relative bg-gray-dark rounded-m">
-          <div className="flex gap-10">
+        <div className="col-span-5 h-16 lg:h-20 flex items-center justify-center gap-6 lg:gap-10 relative bg-gray-dark rounded-m">
+          <div className="flex gap-6 lg:gap-10">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
-                className="inline-flex items-center justify-center px-0 py-4 relative flex-[0_0_auto] rounded-xs overflow-hidden hover:bg-gray-dark/20 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center px-0 py-3 lg:py-4 relative flex-[0_0_auto] rounded-xs overflow-hidden hover:bg-gray-dark/20 transition-colors cursor-pointer"
               >
                 <div
                   className={`relative w-fit mt-[-1.00px] fonts-mono-xs whitespace-nowrap transition-colors ${
@@ -193,7 +193,7 @@ export const Navigation = (): React.JSX.Element => {
 
         {/* Zmiana języka - 1 kolumna (10) */}
         <div 
-          className={`col-span-1 h-20 flex justify-center gap-2.5 bg-gray-dark rounded-m overflow-hidden items-center relative cursor-pointer group hover:bg-gray-dark/80 transition-colors ${!isHydrated ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`col-span-1 h-16 lg:h-20 flex justify-center gap-2 lg:gap-2.5 bg-gray-dark rounded-m overflow-hidden items-center relative cursor-pointer group hover:bg-gray-dark/80 transition-colors ${!isHydrated ? 'opacity-50 cursor-not-allowed' : ''}`}
           onClick={() => {
             if (isHydrated) {
               toggleLanguage();
@@ -207,7 +207,7 @@ export const Navigation = (): React.JSX.Element => {
         </div>
 
         {/* Login - 2 kolumny (11-12) */}
-        <Button className="col-span-2 h-20 bg-accent hover:bg-accent/90 text-dark rounded-m fonts-mono-xs border-none">
+        <Button className="col-span-2 h-16 lg:h-20 bg-accent hover:bg-accent/90 text-dark rounded-m fonts-mono-xs border-none">
           {translations.navigation.login}
         </Button>
       </div>

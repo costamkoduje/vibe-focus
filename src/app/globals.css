@@ -98,6 +98,8 @@
 .grid-col-8 { grid-column: span 8; }
 .grid-col-9 { grid-column: span 9; }
 .grid-col-10 { grid-column: span 10; }
+.grid-col-11 { grid-column: span 11; }
+.grid-col-12 { grid-column: span 12; }
 
 /* Horizontal Scroll Styles */
 .horizontal-container {
@@ -186,8 +188,6 @@ body {
   background: linear-gradient(to right, #FDE10D, #FDE10D);
   transition: width 0.1s ease;
 }
-.grid-col-11 { grid-column: span 11; }
-.grid-col-12 { grid-column: span 12; }
 
 /* Typography Styles - Responsive */
 .typography-heading-xl {
@@ -378,6 +378,28 @@ body {
   .grid-col-7, .grid-col-8, .grid-col-9, .grid-col-10, .grid-col-11, .grid-col-12 {
     grid-column: span 12;
   }
+  
+  /* Mobile-specific adjustments */
+  .sphere-mask {
+    width: 80vw !important;
+    height: 80vw !important;
+    top: 10vh !important;
+  }
+  
+  /* Mobile touch improvements */
+  .map-pin {
+    min-width: 24px;
+    min-height: 24px;
+  }
+  
+  /* Mobile carousel improvements */
+  .horizontal-scroll {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .horizontal-panel {
+    scroll-snap-align: start;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -386,6 +408,13 @@ body {
   }
   .grid-col-7, .grid-col-8, .grid-col-9, .grid-col-10, .grid-col-11, .grid-col-12 {
     grid-column: span 12;
+  }
+  
+  /* Tablet-specific adjustments */
+  .sphere-mask {
+    width: 70vh !important;
+    height: 70vh !important;
+    top: 15vh !important;
   }
 }
 

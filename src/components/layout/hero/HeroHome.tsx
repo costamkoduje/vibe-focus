@@ -8,12 +8,13 @@ export const HeroSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
   
   return (
-    <div className="flex flex-col w-[calc(100%-2.5rem)] mx-auto relative">
+    <div className="flex flex-col w-full sm:w-[calc(100%-2rem)] lg:w-[calc(100%-2.5rem)] mx-auto relative">
       {/* Hero Content */}
       <section 
         className="flex flex-col w-full items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-5 py-12 sm:py-20 lg:py-40 relative rounded-l overflow-hidden"
         style={{
-          height: 'calc(100vh - 100px)', // 100vh minus wysokość nawigacji (około 120px)
+          height: 'calc(100vh - 80px)', // Responsywna wysokość - mniejsza na mobile
+          minHeight: '500px', // Minimalna wysokość na mobile
           backgroundImage: 'url(/images/hero/backbroundhero.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',

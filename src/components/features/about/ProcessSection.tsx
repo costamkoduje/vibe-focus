@@ -40,7 +40,7 @@ export const ProcessSection = (): React.JSX.Element => {
         <div className="flex flex-col items-center gap-8 md:gap-16 w-full">
           {/* Header */}
           <header className="text-center px-4">
-            <p className="fonts-mono-xs text-gray-dark mb-4 max-w-col-l mx-auto">
+            <p className="fonts-mono-xs text-gray-dark mb-4">
             {translations.process.philosophy.title}
             </p>
             <h2 className="fonts-fig-l text-gray-dark mb-8 max-w-col-2xl mx-auto">
@@ -63,11 +63,11 @@ export const ProcessSection = (): React.JSX.Element => {
               <div className="hidden lg:block lg:col-span-2"></div>
               {/* Main content - 8 columns on desktop, full width on mobile */}
               <div className="col-span-1 lg:col-span-8">
-                <div className="w-full bg-light p-1 rounded-xl min-h-[60vh] lg:h-[60vh]">
+                <div className="w-full bg-light p-1 rounded-xl min-h-[80vh] lg:h-[80vh]">
                   <div className="flex flex-col lg:flex-row items-stretch gap-1 w-full h-full">
                     {/* Left Column - Two small cards */}
                     <div className="flex flex-col gap-1 w-full lg:w-1/2 h-full overflow-hidden">
-                      <Card className="w-full flex-1 lg:h-1/2 bg-accent rounded-xl overflow-hidden relative  max-h-full">
+                      <Card className="w-full h-[200px] lg:h-1/2 bg-accent rounded-xl overflow-hidden relative">
                         <div 
                           className="absolute inset-0 bg-cover bg-center opacity-100"
                           style={{ backgroundImage: `url(${processSteps[0]?.backgroundImage || ''})` }}
@@ -84,7 +84,7 @@ export const ProcessSection = (): React.JSX.Element => {
                         </CardContent>
                       </Card>
 
-                      <Card className="w-full flex-1 lg:h-1/2 bg-gray-dark rounded-xl overflow-hidden relative max-h-full">
+                      <Card className="w-full h-[200px] lg:h-1/2 bg-gray-dark rounded-xl overflow-hidden relative">
                         <div 
                           className="absolute inset-0 bg-cover bg-center opacity-100"
                           style={{ backgroundImage: `url(${processSteps[1]?.backgroundImage || ''})` }}
@@ -103,7 +103,7 @@ export const ProcessSection = (): React.JSX.Element => {
                     </div>
 
                     {/* Right Column - One large card */}
-                    <Card className="w-full lg:w-1/2 h-full bg-gray-dark rounded-xl overflow-hidden relative min-h-[300px] md:min-h-[400px] lg:min-h-0">
+                    <Card className="w-full lg:w-1/2 h-full bg-gray-dark rounded-xl overflow-hidden relative min-h-[400px] md:min-h-[500px] lg:min-h-0">
                       <div 
                         className="absolute inset-0 bg-cover bg-center opacity-50"
                         style={{ backgroundImage: `url(${processSteps[2]?.backgroundImage || ''})` }}

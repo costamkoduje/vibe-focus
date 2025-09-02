@@ -80,7 +80,7 @@ export const ImageSection = (): React.JSX.Element => {
                   </p>
                 </div>
                 
-                <h2 className="fonts-fig-l text-gray-dark text-start mb-4 sm:mb-8 leading-tight pb-10 pt-20">
+                <h2 className="fonts-fig-l text-gray-dark text-start mb-4 sm:mb-8 leading-tight">
                 {translations.imageSection.title}
                 </h2>  
                 <p className="text-gray-dark fonts-mono-l leading-relaxed text-left">
