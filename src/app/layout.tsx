@@ -3,6 +3,7 @@ import { Inter, Figtree } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/components/providers/I18nProvider";
 import { GoTopButton } from "@/components/ui/buttons/go-top-button";
+import { ErrorBoundary } from "@/components/ui/error-boundary";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -52,10 +53,12 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${inter.variable} ${figtree.variable}`}>
       <body className={`${inter.className} antialiased bg-gray-mid`}>
-        <I18nProvider>
-          {children}
-          <GoTopButton />
-        </I18nProvider>
+        <ErrorBoundary>
+          <I18nProvider>
+            {children}
+            <GoTopButton />
+          </I18nProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

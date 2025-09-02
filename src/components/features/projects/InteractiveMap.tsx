@@ -217,13 +217,20 @@ const LocationCard: React.FC<{
   if (!location) return null;
 
   return (
-                <div className="absolute w-[441px] h-full bg-gray-light rounded-xl z-30">
+    <>
+      {/* Overlay do zamykania karty */}
+      <div 
+       
+        onClick={onClose}
+      />
+      
+      <div className="absolute w-[441px] h-full bg-gray-light rounded-xl z-30">
         {/* Kontener z kartami */}
         <div className="absolute inset-0 bg-gray-dark rounded-xl p-1">
           <div className="flex flex-col gap-1 w-full h-full">
             
             {/* Górna karta - Lokalizacja */}
-            <Card className="w-full bg-gray-mid rounded-xl overflow-hidden relative flex-1">
+            <Card className="w-full bg-gray-mid rounded-xl overflow-hidden relative h-2/3">
               <CardContent className="w-full h-full p-8 relative z-10 flex flex-col justify-between">
                 {/* Przycisk zamknięcia */}
                 <div className="relative w-[45px] h-[47px] flex items-start">
@@ -234,7 +241,7 @@ const LocationCard: React.FC<{
                 
                 {/* Informacje o lokalizacji */}
                 <div className="flex flex-col gap-2.5">
-                  <div className="text-[16px] text-gray-dark uppercase tracking-[0.32px]">
+                  <div className="font-mono-xs text-gray-dark uppercase tracking-[0.32px]">
                     [LOKALIZACJA]
                   </div>
                   <div className="text-[65px] text-gray-dark font-normal tracking-[-2.627px] leading-[72px]">
@@ -245,13 +252,13 @@ const LocationCard: React.FC<{
             </Card>
             
             {/* Dolna karta - Stocznie */}
-            <Card className="w-full bg-gray-mid rounded-xl overflow-hidden relative flex-1">
+            <Card className="w-full bg-gray-mid rounded-xl overflow-hidden relative h-1/3">
               <CardContent className="w-full h-full p-8 relative z-10 flex flex-col justify-center">
                 <div className="flex flex-col gap-5">
-                  <div className="text-[22px] text-gray-dark uppercase">
+                  <div className="font-mono-xs text-gray-dark uppercase">
                     [STOCZNIE]
                   </div>
-                  <div className="flex flex-col gap-5 text-[22px] text-gray-dark uppercase">
+                  <div className="flex flex-col gap-5 font-mono-xs text-gray-dark uppercase">
                     {location.shipyards.map((shipyard, index) => (
                       <div key={index} className="leading-[26px]">
                         {shipyard}
@@ -264,7 +271,8 @@ const LocationCard: React.FC<{
             
           </div>
         </div>
-    </div>
+      </div>
+    </>
   );
 };
 

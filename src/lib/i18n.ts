@@ -31,7 +31,6 @@ export const useI18n = create<I18nStore>()(
       t: (key: string) => {
         const { translations } = get();
         if (!translations) {
-          console.warn('Translations not available yet');
           return key;
         }
         const keys = key.split('.');
@@ -41,7 +40,6 @@ export const useI18n = create<I18nStore>()(
           if (value && typeof value === 'object' && k in (value as Record<string, unknown>)) {
             value = (value as Record<string, unknown>)[k];
           } else {
-            console.warn(`Translation key not found: ${key}`);
             return key;
           }
         }

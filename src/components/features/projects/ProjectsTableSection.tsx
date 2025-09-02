@@ -36,13 +36,11 @@ export const ProjectsTableSection = (): React.JSX.Element => {
             setProjectsData(projects);
             setLoading(false);
           },
-          error: (error: Error) => {
-            console.error('Błąd podczas parsowania CSV:', error);
+          error: () => {
             setLoading(false);
           }
         });
-      } catch (error) {
-        console.error('Błąd podczas ładowania pliku CSV:', error);
+      } catch {
         setLoading(false);
       }
     };

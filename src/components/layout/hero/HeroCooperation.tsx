@@ -83,7 +83,6 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
           },
           onLeave: () => {
             // Po zakończeniu horizontal scroll
-            console.log('Horizontal scroll completed');
           }
         }
       });
