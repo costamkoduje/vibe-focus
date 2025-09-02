@@ -48,10 +48,10 @@ export const Navigation = (): React.JSX.Element => {
   return (
     <div ref={navigationRef} id="navigation" className="flex flex-col w-full relative">
       {/* Mobile Navigation */}
-      <div className="flex md:hidden w-full items-center justify-between gap-2 p-3">
-        <Link href="/" className="flex items-center gap-2 bg-gray-dark rounded-m px-4 py-3 hover:bg-gray-dark/80 transition-colors min-h-[44px]">
-          <Image className="w-6 h-8" alt="Logo FE" src="/images/icons/logoFE.svg" width={24} height={32} />
-          <div className="fonts-mono-l text-gray-light leading-tight">
+      <div className="flex md:hidden w-full items-center justify-between gap-2 ">
+        <Link href="/" className="flex items-center gap-2 px-4 py-3 hover:opacity-80 transition-opacity min-h-[44px]">
+          <Image className="w-6 h-8" alt="Logo FE" src="/images/icons/logoFEdark.svg" width={24} height={32} />
+          <div className="fonts-mono-l text-gray-dark leading-tight">
             {translations.navigation.companyName.split(' ').map((word, index, array) => (
               <React.Fragment key={index}>
                 {word}
@@ -62,7 +62,7 @@ export const Navigation = (): React.JSX.Element => {
         </Link>
         
         <Button 
-          className="bg-accent hover:bg-accent/90 text-dark rounded-m px-4 py-3 fonts-mono-xs min-h-[44px] min-w-[80px]"
+          className="bg-gray-light hover:bg-gray-light/90 text-dark rounded-m px-4 py-3 fonts-mono-xs min-h-[44px] min-w-[80px]"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? 'ZAMKNIJ' : 'MENU'}
@@ -71,7 +71,7 @@ export const Navigation = (): React.JSX.Element => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden w-full bg-gray-dark mx-3 rounded-m mt-2 p-4 space-y-3">
+        <div className="md:hidden w-full bg-gray-dark md:mx-3 mx-0 rounded-m m-5 p-4 space-y-3">
           <Link 
             href="/" 
             className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
@@ -86,13 +86,7 @@ export const Navigation = (): React.JSX.Element => {
           >
             O NAS
           </Link>
-          <Link 
-            href="/projects" 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            {translations.navigation.projects}
-          </Link>
+
           <Link 
             href="/career" 
             className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
@@ -108,16 +102,24 @@ export const Navigation = (): React.JSX.Element => {
             WSPÓŁPRACA
           </Link>
           <Link 
-            href="/contact" 
-            className="block fonts-mono-m text-accent bg-accent/10 hover:bg-accent/20 transition-colors py-3 px-4 rounded-m mt-4 min-h-[44px] flex items-center justify-center"
+            href="/projects" 
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
             onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {translations.navigation.projects}
+          </Link>
+          <Link 
+            href="/contact" 
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 min-h-[44px] flex items-center"
+           onClick={() => setIsMobileMenuOpen(false)}
           >
             {translations.navigation.menu.contact}
           </Link>
+
           
           {/* Language switcher */}
           <button 
-            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 mt-4 min-h-[44px] w-full text-left"
+            className="block fonts-mono-m text-gray-light hover:text-accent transition-colors py-3 px-3 rounded-m hover:bg-gray-mid/20 mt-5 min-h-[44px] w-full text-left"
             onClick={() => {
               if (isHydrated) {
                 toggleLanguage();
