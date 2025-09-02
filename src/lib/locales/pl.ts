@@ -67,35 +67,35 @@ export const pl: Translations = {
     description: "Nasze najważniejsze projekty w branży morskiej, które pokazują nasze doświadczenie i możliwości.",
     projects: [
       {
-        name: "Projekt Stoczni Gdańskiej",
-        role: "Główny wykonawca instalacji elektrycznych"
+        name: "Celebrity Apex",
+        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
       },
       {
-        name: "Modernizacja jednostki morskiej",
-        role: "Kompleksowa automatyka i systemy kontroli"
+        name: "NCL Epic",
+        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
       },
       {
-        name: "Instalacje portowe",
-        role: "Systemy elektryczne dla infrastruktury portowej"
+        name: "Ropax",
+        role: "Nowa budowa jednostki. Wsparcie klienta w realizacji podłączeń elektrycznych w rejonie siłowni. Wymiana urządzeń gastronomicznych oraz modernizacja instalacji elektrycznej w strefie bufetu. "
       },
       {
-        name: "Automatyzacja procesów",
-        role: "Zaawansowane systemy automatyki przemysłowej"
+        name: "Adventure of the Seas",
+        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
       },
       {
-        name: "Projekt offshore",
-        role: "Specjalistyczne instalacje dla platform morskich"
+        name: "Aida Diva E",
+        role: "Wsparcie klienta podczas szerokiego zakresu przebudowy. Praca w rejonie restaruacji oraz kabin."
       }
     ]
   },
   stats: {
     descriptions: [
-      "Lata doświadczenia w branży morskiej",
-      "Zrealizowanych projektów",
-      "Zadowolonych klientów",
-      "Certyfikowanych specjalistów",
-      "Gwarancja jakości",
-      "Wsparcie techniczne 24/7"
+      "komplentych projektow",
+      "krajów",
+      "pracowników",
+      "doświadczenie",
+      "zaufanie",
+      "global servicess"
     ]
   },
   callToAction: {

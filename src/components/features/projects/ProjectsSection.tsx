@@ -12,32 +12,32 @@ export const ProjectsSection = (): React.JSX.Element => {
   const projects = [
     {
       id: 1,
-      name: translations.projects.projects[0]?.name || "Kontenerowiec MSC",
-      role: translations.projects.projects[0]?.role || "KOMPLEKSOWA INSTALACJA ELEKTRYCZNA",
+      name: translations.projects.projects[0]?.name || "Celebrity Apex",
+      role: translations.projects.projects[0]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
       image: "/images/projects/p1.jpg"
     },
     {
       id: 2,
-      name: translations.projects.projects[1]?.name || "Statek Wycieczkowy",
-      role: translations.projects.projects[1]?.role || "SYSTEMY AUTOMATYZACJI POKŁADOWEJ",
+      name: translations.projects.projects[1]?.name || "NCL Epic",
+      role: translations.projects.projects[1]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
       image: "/images/projects/p2.jpg"
     },
     {
       id: 3,
-      name: translations.projects.projects[2]?.name || "Royal Caribbean",
-      role: translations.projects.projects[2]?.role || "INSTALACJE ELEKTRYCZNE POKŁADU",
+      name: translations.projects.projects[2]?.name || "Ropax",
+      role: translations.projects.projects[2]?.role || "Nowa budowa jednostki. Wsparcie klienta w realizacji podłączeń elektrycznych w rejonie siłowni. Wymiana urządzeń gastronomicznych oraz modernizacja instalacji elektrycznej w strefie bufetu. ",
       image: "/images/projects/p3.jpg"
     },
     {
       id: 4,
-      name: translations.projects.projects[3]?.name || "ORP Ślązak",
-      role: translations.projects.projects[3]?.role || "SYSTEMY ELEKTRONICZNE MORSKIE",
+      name: translations.projects.projects[3]?.name || "Adventure of the Seas",
+      role: translations.projects.projects[3]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
       image: "/images/projects/p4.jpg"
     },
     {
       id: 5,
-      name: translations.projects.projects[4]?.name || "Statek Badawczy",
-      role: translations.projects.projects[4]?.role || "ELEKTRONIKA POKŁADOWA",
+      name: translations.projects.projects[4]?.name || "Aida Diva E",
+      role: translations.projects.projects[4]?.role || "Wsparcie klienta podczas szerokiego zakresu przebudowy. Praca w rejonie restaruacji oraz kabin.",
       image: "/images/projects/p5.jpg"
     }
   ];
@@ -80,7 +80,7 @@ export const ProjectsSection = (): React.JSX.Element => {
         </div>
 
         {/* Projects Carousel */}
-        <div className="w-full relative bg-dark overflow-hidden">
+        <div className="w-full relative bg-gray-mid overflow-hidden">
           <div 
             ref={scrollContainerRef}
             className="flex gap-1 py-1 overflow-x-auto scrollbar-hide pl-4"
@@ -121,7 +121,7 @@ export const ProjectsSection = (): React.JSX.Element => {
             <div className="grid grid-cols-12 gap-5">
               <div className="col-span-2"></div>
               <div className="col-span-2">
-                <div className="bg-dark  rounded-2xl p-1 flex gap-1 border border-dark w-fit">
+                <div className="bg-gray-mid  rounded-2xl p-1 flex gap-1  w-fit">
                   <AnimatedNavButton
                     direction="left"
                     onClick={scrollLeft}

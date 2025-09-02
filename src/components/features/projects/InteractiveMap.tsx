@@ -277,8 +277,8 @@ export const InteractiveMap: React.FC = () => {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = -((e.clientX - rect.left) / rect.width - 0.5) * 470; // Odwrócony kierunek X
-    const y = -((e.clientY - rect.top) / rect.height - 0.5) * 100; // Odwrócony kierunek Y
+    const x = -((e.clientX - rect.left) / rect.width - 0.5) * 550; // Odwrócony kierunek X
+    const y = -((e.clientY - rect.top) / rect.height - 0.5) * 150; // Odwrócony kierunek Y
     setMousePosition({ x, y });
   };
 
@@ -288,14 +288,14 @@ export const InteractiveMap: React.FC = () => {
 
   return (
     <div 
-      className="bg-gray-dark rounded-xl relative overflow-hidden h-[70vh]"
+      className="bg-gray-dark rounded-xl relative overflow-hidden h-[60vh]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {/* Sfera z gradientem i maską SVG */}
       <div className="absolute inset-0 flex items-center justify-center">
         {/* Główna sfera z okrągłą maską */}
-        <div className="relative w-[90vh] h-[90vh] sphere-mask top-[15vh]">
+        <div className="relative w-[90vh] h-[90vh] sphere-mask top-[20vh]">
           {/* Maska SVG dla mapy świata */}
           <div 
             className="absolute inset-0 map-mask transition-transform duration-300 ease-out"
@@ -304,7 +304,7 @@ export const InteractiveMap: React.FC = () => {
             }}
           >
             {/* Gradient dla lądów */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 opacity-60"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 opacity-75"></div>
           </div>
           
           {/* Efekt sfery z gradientem radialnym */}
@@ -312,7 +312,7 @@ export const InteractiveMap: React.FC = () => {
           
           {/* Interaktywne pinezki - teraz wewnątrz sfery */}
           <div 
-            className="absolute inset-0 transition-transform duration-300 ease-out"
+            className="absolute inset-0 transition-transform duration-300 ease-out font-mono-xs"
             style={{
               transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
             }}

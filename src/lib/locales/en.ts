@@ -90,12 +90,12 @@ export const en: Translations = {
   },
   stats: {
     descriptions: [
-      "Years of experience in marine industry",
-      "Completed projects",
-      "Satisfied clients",
-      "Certified specialists",
-      "Quality guarantee",
-      "24/7 technical support"
+      "completed projects",
+      "countries",
+      "employees",
+      "experience",
+      "trust",
+      "global services"
     ]
   },
   callToAction: {

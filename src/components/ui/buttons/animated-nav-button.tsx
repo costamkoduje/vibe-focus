@@ -50,16 +50,15 @@ export const AnimatedNavButton: React.FC<AnimatedNavButtonProps> = ({
     <button 
       ref={buttonRef}
       onClick={onClick}
-      className={`w-16 h-16 bg-gray-mid hover:bg-gray-mid/60 rounded-2xl flex items-center justify-center transition-colors duration-200 ${className}`}
+      className={`w-16 h-16 bg-gray-dark hover:bg-gray-dark/60 rounded-2xl flex items-center justify-center transition-colors duration-200 ${className}`}
     >
       <Image 
         ref={arrowRef}
-        src="/images/icons/arrow.svg" 
+        src="/images/icons/arrow-gray.svg" 
         alt={direction === 'left' ? 'Previous' : 'Next'} 
         className={`w-6 h-6 ${direction === 'left' ? 'rotate-180' : ''}`}
         width={16}
         height={16}
-        style={{ filter: 'brightness(0) saturate(100%) invert(24%) sepia(8%) saturate(1038%) hue-rotate(202deg) brightness(94%) contrast(86%)' }}
       />
     </button>
   );

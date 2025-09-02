@@ -66,8 +66,8 @@ export const ProcessSection = (): React.JSX.Element => {
                 <div className="w-full bg-light p-1 rounded-xl min-h-[60vh] lg:h-[60vh]">
                   <div className="flex flex-col lg:flex-row items-stretch gap-1 w-full h-full">
                     {/* Left Column - Two small cards */}
-                    <div className="flex flex-col gap-1 w-full lg:w-1/2 h-full">
-                      <Card className="w-full flex-1 lg:h-1/2 bg-accent rounded-xl overflow-hidden relative min-h-[200px] md:min-h-[250px]">
+                    <div className="flex flex-col gap-1 w-full lg:w-1/2 h-full overflow-hidden">
+                      <Card className="w-full flex-1 lg:h-1/2 bg-accent rounded-xl overflow-hidden relative  max-h-full">
                         <div 
                           className="absolute inset-0 bg-cover bg-center opacity-100"
                           style={{ backgroundImage: `url(${processSteps[0]?.backgroundImage || ''})` }}
@@ -84,7 +84,7 @@ export const ProcessSection = (): React.JSX.Element => {
                         </CardContent>
                       </Card>
 
-                      <Card className="w-full flex-1 lg:h-1/2 bg-gray-dark rounded-xl overflow-hidden relative min-h-[200px] md:min-h-[250px]">
+                      <Card className="w-full flex-1 lg:h-1/2 bg-gray-dark rounded-xl overflow-hidden relative max-h-full">
                         <div 
                           className="absolute inset-0 bg-cover bg-center opacity-100"
                           style={{ backgroundImage: `url(${processSteps[1]?.backgroundImage || ''})` }}

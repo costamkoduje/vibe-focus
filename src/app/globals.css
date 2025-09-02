@@ -98,6 +98,18 @@
 .grid-col-8 { grid-column: span 8; }
 .grid-col-9 { grid-column: span 9; }
 .grid-col-10 { grid-column: span 10; }
+
+/* Horizontal Scroll Styles */
+.horizontal-container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.horizontal-slide {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+}
 .grid-col-11 { grid-column: span 11; }
 .grid-col-12 { grid-column: span 12; }
 
@@ -442,4 +454,63 @@
 /* Hover pinezki - na wierzchu */
 .map-pin:hover {
   z-index: 100 !important;
+}
+
+/* Sticky Scroll Animation dla kart services */
+.card-wrapper {
+  position: sticky;
+  top: 10vh;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+  transform-origin: center center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 10;
+}
+
+.card-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-wrapper {
+    position: relative;
+    top: auto;
+    height: auto;
+    margin-bottom: 3rem;
+    z-index: auto;
+  }
+}
+
+.sticky-section .grid {
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+}
+
+/* Sticky tekst z lewej strony */
+.sticky-section .col-span-12.lg\:col-start-3.lg\:col-span-4 {
+  position: sticky;
+  top: 20vh;
+  z-index: 15;
+  height: fit-content;
+}
+
+/* Responsive adjustments dla sticky section */
+@media (max-width: 1024px) {
+  .sticky-section {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    z-index: auto;
+  }
+  
+  .sticky-section .col-span-12.lg\:col-start-3.lg\:col-span-4 {
+    position: relative;
+    top: auto;
+    z-index: auto;
+  }
 }

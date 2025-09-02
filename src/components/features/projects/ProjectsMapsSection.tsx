@@ -7,10 +7,6 @@ import { InteractiveMap } from "./InteractiveMap";
 export const ProjectsMapsSection = (): React.JSX.Element => {
   const { translations, language } = useTranslation();
   
-  // Sprawdź czy translations są dostępne
-  if (!translations || !translations.projectsMapsSection) {
-    return <div>Ładowanie...</div>;
-  }
 
   return (
     <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-t-[24px] mt-5">

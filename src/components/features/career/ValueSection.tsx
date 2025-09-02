@@ -1,11 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Rejestruj ScrollTrigger plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export const ValueSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
+  const valuesRef = useRef<HTMLDivElement>(null);
   
   const values = translations.careerPage?.values?.items || [
     {
@@ -30,10 +38,40 @@ export const ValueSection = (): React.JSX.Element => {
     }
   ];
 
+  useEffect(() => {
+    if (!valuesRef.current) return;
+
+    const valueElements = valuesRef.current.querySelectorAll('.value-card');
+    const totalValueElements = valueElements.length;
+
+    valueElements.forEach((el, position) => {
+      const isLast = position === totalValueElements - 1;
+      
+      gsap.to(el, {
+        ease: 'none',
+
+        yPercent: isLast ? 0 : 0,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 1,
+          invalidateOnRefresh: true,
+          markers: true
+        }
+      });
+    });
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
 
   return (
-    <section className="relative w-full flex flex-col mb-5 ">
-      <div className="relative w-[calc(100%-2.5rem)] mx-auto bg-gray-dark rounded-l pt-20 pb-20">
+    <section className="relative w-full flex flex-col mb-5">
+      <div className="relative w-[calc(100%-2.5rem)] mx-auto bg-gray-dark rounded-l pt-20 pb-20 sticky-section">
         <div className="grid grid-cols-12 gap-5 lg:gap-5">
           {/* Left Column - Text - 4 columns */}
           <div className="col-span-12 lg:col-start-3 lg:col-span-4">
@@ -49,10 +87,10 @@ export const ValueSection = (): React.JSX.Element => {
           </div>
 
           {/* Right Column - Value Cards - 4 columns */}
-          <div className="col-span-12 lg:col-start-7 lg:col-span-4 w-full bg-gray-mid rounded-l p-1">
-            <div className="grid grid-cols-1 gap-1 h-full">
+          <div className="col-span-12 lg:col-start-7 lg:col-span-4 w-full bg-gray-mid rounded-l p-1" ref={valuesRef}>
+            <div className="flex flex-col h-full">
               {values.map((value, index) => (
-                <div key={index} className="bg-dark rounded-l p-6 flex flex-col justify-between">
+                <div key={index} className="value-card bg-dark rounded-l p-6 flex flex-col justify-between pb-10">
                   <div>
                       {/* Icon container - top left */}
                       <div className="w-12 h-12 bg-gray-mid rounded-lg flex items-center justify-center mb-6">
