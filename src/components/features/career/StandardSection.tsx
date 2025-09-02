@@ -41,8 +41,8 @@ export const StandardSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-mid rounded-l mt-5 pb-40">
-      <div className="flex flex-col items-center gap-16 w-full py-20 mb-20">
+    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-mid rounded-l mt-5 md:pb-40 pb-0">
+      <div className="flex flex-col items-center gap-16 w-full py-20 mb-0 md:mb-20">
         <div className="flex flex-col items-center gap-16 w-full">
           {/* Header */}
           <header className="text-center">
@@ -59,15 +59,15 @@ export const StandardSection = (): React.JSX.Element => {
 
           {/* Bento Grid - 8 columns width */}
           <div className="w-full">
-            <div className="grid grid-cols-12 gap-5 mx-0 mb-10">
+            <div className="grid grid-cols-12 gap-1 md:gap-5 mx-0 mb-0 md:mb-10">
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="hidden md:block col-span-2"></div>
               {/* Main content - 8 columns */}
-              <div className="col-span-8">
+              <div className="col-span-12 md:col-span-8 ">
                 <div className="w-full">
-                  <div className="grid grid-cols-8 gap-1 w-full bg-gray-light rounded-xl p-1">
+                  <div className="grid grid-cols-1 md:grid-cols-8 gap-1 md:gap-1 w-full bg-gray-light md:rounded-xl rounded-m p-1">
                     {/* Top Row - 2 cards */}
-                    <Card className="col-span-5 h-[460px] bg-gray-mid rounded-xl overflow-hidden">
+                    <Card className="col-span-1 md:col-span-5 h-[300px] md:h-[460px] bg-gray-mid rounded-none md:rounded-xl overflow-hidden">
                       <CardContent className="w-full h-full flex flex-col justify-between p-0">
                         <div className="space-y-3 p-6">
                           <h3 className="fonts-mono-xs text-gray-dark leading-tight uppercase tracking-wide font-bold">
@@ -89,7 +89,7 @@ export const StandardSection = (): React.JSX.Element => {
                       </CardContent>
                     </Card>
 
-                    <Card className="col-span-3 h-[460px] bg-gray-mid rounded-xl overflow-hidden">
+                    <Card className="col-span-1 md:col-span-3 h-[300px] md:h-[460px] bg-gray-mid rounded-none md:rounded-xl overflow-hidden">
                       <CardContent className="w-full h-full flex flex-col justify-between p-0">
                         <div className="space-y-3 p-6">
                           <h3 className="fonts-mono-xs text-gray-dark leading-tight uppercase tracking-wide font-bold ">
@@ -112,7 +112,7 @@ export const StandardSection = (): React.JSX.Element => {
                     </Card>
 
                     {/* Bottom Row - 2 cards */}
-                    <Card className="col-span-3 h-[460px] bg-gray-mid rounded-xl overflow-hidden">
+                    <Card className="col-span-1 md:col-span-3 h-[300px] md:h-[460px] bg-gray-mid rounded-none md:rounded-xl overflow-hidden">
                       <CardContent className="w-full h-full flex flex-col justify-between p-0">
                         <div className="space-y-3 p-6">
                           <h3 className={`fonts-mono-xs text-gray-dark leading-tight uppercase tracking-wide font-bold `}>
@@ -134,13 +134,13 @@ export const StandardSection = (): React.JSX.Element => {
                       </CardContent>
                     </Card>
 
-                    <Card className="col-span-5 h-[460px] bg-gray-mid rounded-xl overflow-hidden">
+                    <Card className="col-span-1 md:col-span-5 h-[300px] md:h-[460px] bg-gray-mid rounded-none md:rounded-xl overflow-hidden">
                       <CardContent className="w-full h-full flex flex-col justify-between p-0">
                         <div className="space-y-3 p-6">
                           <h3 className={`fonts-mono-xs text-gray-dark leading-tight uppercase tracking-wide font-bold`}>
                             {standards[3]?.title || ''}
                           </h3>
-                          <p className={`fonts-mono-xs text-gray-dark uppercase leading-relaxed `}>
+                            <p className={`fonts-mono-xs text-gray-dark uppercase leading-relaxed `}>
                             {standards[3]?.description || ''}
                           </p>
                         </div>
@@ -157,7 +157,7 @@ export const StandardSection = (): React.JSX.Element => {
                     </Card>
 
                     {/* Bottom Full Width Card */}
-                    <Card className="col-span-8 h-[460px] bg-gray-mid rounded-xl overflow-hidden">
+                    <Card className="col-span-1 md:col-span-8 h-[300px] md:h-[460px] bg-gray-mid rounded-none md:rounded-xl overflow-hidden">
                       <CardContent className="w-full h-full flex flex-col justify-between p-0">
                         <div className="space-y-3 p-6">
                           <h3 className={`fonts-mono-xs text-gray-dark leading-tight uppercase tracking-wide font-bold`}>
@@ -182,7 +182,7 @@ export const StandardSection = (): React.JSX.Element => {
                 </div>
               </div>
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="hidden md:block col-span-2"></div>
             </div>
           </div>
         </div>

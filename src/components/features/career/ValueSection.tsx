@@ -70,8 +70,8 @@ export const ValueSection = (): React.JSX.Element => {
 
   return (
     <section className="relative w-full flex flex-col mb-5">
-      <div className="relative w-[calc(100%-2.5rem)] mx-auto bg-gray-dark rounded-l pt-20 pb-20 sticky-section">
-        <div className="grid grid-cols-12 gap-5 lg:gap-5">
+      <div className="relative w-full md:w-[calc(100%-2.5rem)] md:mx-auto bg-gray-dark rounded-l pt-20 pb-5 md:pb-20 mt-5 md:mt-0 sticky-section">
+        <div className="grid grid-cols-12 gap-5 lg:gap-5 px-5 md:px-0 ">
           {/* Left Column - Text - 4 columns */}
           <div className="col-span-12 lg:col-start-3 lg:col-span-4">
             <p className="fonts-mono-xs text-gray-mid uppercase mb-4 tracking-[0.4px]">
@@ -87,7 +87,7 @@ export const ValueSection = (): React.JSX.Element => {
 
           {/* Right Column - Value Cards - 4 columns */}
           <div className="col-span-12 lg:col-start-7 lg:col-span-4 w-full bg-gray-mid rounded-l p-1" ref={valuesRef}>
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full gap-1">
               {values.map((value, index) => (
                 <div key={index} className="value-card bg-dark rounded-l p-6 flex flex-col justify-between pb-10">
                   <div>

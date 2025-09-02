@@ -43,11 +43,17 @@ export const FilarSection = (): React.JSX.Element => {
     // GSAP animation
     if (containerRef.current && cardsRef.current.length > 0) {
       const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+      const isMobile = window.innerWidth < 640; // sm breakpoint
       
       cards.forEach((card, i) => {
-        const targetFlex = index === 0 ? (i === 0 ? 1 : 0.2) : 
-                          index === 1 ? (i === 1 ? 1 : 0.2) : 
-                          (i === 2 ? 1 : 0.2);
+        let targetFlex;
+        if (isMobile) {
+          // Na telefonie: aktywna 2/4, nieaktywne 1/4
+          targetFlex = i === index ? 2 : 1;
+        } else {
+          // Na desktop: aktywna 1, nieaktywne 0.2
+          targetFlex = i === index ? 1 : 0.2;
+        }
         
         gsap.default.to(card, {
           flex: targetFlex,
@@ -100,10 +106,20 @@ export const FilarSection = (): React.JSX.Element => {
       // Initialize GSAP animation
       if (containerRef.current && cardsRef.current.length > 0) {
         const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+        const isMobile = window.innerWidth < 640; // sm breakpoint
         
         cards.forEach((card, i) => {
+          let initialFlex;
+          if (isMobile) {
+            // Na telefonie: pierwsza karta 2/4, pozostałe 1/4
+            initialFlex = i === 0 ? 2 : 1;
+          } else {
+            // Na desktop: pierwsza karta 1, pozostałe 0.2
+            initialFlex = i === 0 ? 1 : 0.2;
+          }
+          
           gsap.default.set(card, {
-            flex: i === 0 ? 1 : 0.2
+            flex: initialFlex
           });
         });
         
@@ -139,10 +155,11 @@ export const FilarSection = (): React.JSX.Element => {
 
   return (
     <section className="relative w-full flex flex-col mb-5">
-      <div className="relative w-[calc(100%-2.5rem)] mx-auto bg-gray-mid rounded-l pt-20 pb-20">
-        <div className="grid grid-cols-12 gap-5 lg:gap-5 ">
+      <div className="relative w-full md:w-[calc(100%-2.5rem)] md:mx-auto bg-gray-mid rounded-l pt-20 pb-20">
+        <div className="max-w-6xl mx-auto px-5 md:px-0">
+        <div className="grid grid-cols-8 gap-5 lg:gap-5 px-5 md:px-0">
           {/* Header Section */}
-          <div className="col-span-12 lg:col-start-3 lg:col-span-8 text-center">
+          <div className="col-span-8 lg:col-start-2 lg:col-span-6 text-center">
             <p className="fonts-mono-xs text-gray-dark uppercase mb-4 tracking-wide">
             {translations.cooperationPage?.filary?.subtitle || "(Dlaczego Focus Electro?)"}
             </p>
@@ -156,38 +173,38 @@ export const FilarSection = (): React.JSX.Element => {
         </div>
 
         {/* Three Pillars Section - Single Card with Three Sections */}
-        <div className="mt-20 px-5">
-          <div className="col-span-12 lg:col-start-3 lg:col-span-8 ">
-                          <div 
-                ref={containerRef}
-                className="options-container flex flex-col sm:flex-row items-stretch overflow-hidden min-w-full sm:min-w-[500px] lg:min-w-[600px] max-w-full lg:max-w-[940px] w-full sm:w-[calc(100%-50px)] lg:w-[calc(100%-100px)] h-auto sm:h-[300px] md:h-[380px] lg:h-[460px] mx-auto rounded-xl bg-gray-light p-1 gap-1"
-              >
+        <div className="mt-20 px-5 md:px-0">
+          <div className="col-span-8 lg:col-start-2 lg:col-span-6">
+            <div 
+              ref={containerRef}
+              className="options-container flex flex-col sm:flex-row items-stretch overflow-hidden w-full h-[600px] sm:h-[300px] md:h-[380px] lg:h-[460px] mx-auto rounded-xl bg-gray-light p-1 gap-1"
+            >
               {filary.map((filar, index) => (
                 <div
                   key={index}
                   ref={(el) => {
                     cardsRef.current[index] = el;
                   }}
-                  className="option relative overflow-hidden cursor-pointer bg-gray-mid  rounded-xl"
+                  className="option relative overflow-hidden cursor-pointer bg-gray-mid rounded-xl flex-shrink-0"
                   onClick={() => handleOptionClick(index)}
                 >
 
                   {/* Card Content - Individual Card Layout */}
-                  <div className="card-content absolute inset-0 flex flex-col justify-between p-6">
+                  <div className="card-content absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
                     {/* Title and Description */}
                     <div className={activeIndex === index ? 'text-left' : 'text-center'}>
-                      <h3 className="fonts-mono-m text-gray-dark font-bold mb-4 tracking-wide uppercase">
+                      <h3 className="fonts-mono-m text-gray-dark font-bold mb-4 tracking-wide uppercase text-sm sm:text-base">
                         {filar.title}
                       </h3>
                       <div className="description-content">
-                        <p className="fonts-mono-m text-gray-dark leading-relaxed tracking-wide uppercase whitespace-pre-line">
+                        <p className="fonts-mono-xs sm:fonts-mono-m text-gray-dark leading-relaxed tracking-wide uppercase whitespace-pre-line text-xs sm:text-sm">
                           {filar.description}
                         </p>
                       </div>
                     </div>
                     
                     {/* Image/Visual Section */}
-                    <div className="image-section relative w-full h-80 rounded-lg overflow-hidden">
+                    <div className="image-section relative w-full h-32 sm:h-80 rounded-lg overflow-hidden">
                       <Image
                         src={images[index] || ""}
                         alt={`${filar.title} - Focus Electro`}
@@ -199,8 +216,8 @@ export const FilarSection = (): React.JSX.Element => {
                   </div>
                   
                   {/* Collapsed State Icon */}
-                  <div className="collapsed-icon absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center">
-                    <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="collapsed-icon absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center">
+                    <svg width="20" height="21" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-[27px] sm:h-[28px]">
                       <path d="M13.1919 27.2813V0.257812M0.15332 13.7692H26.2273" stroke="#FDE10D" strokeWidth="2.71048"/>
                     </svg>
                   </div>
@@ -208,6 +225,7 @@ export const FilarSection = (): React.JSX.Element => {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
