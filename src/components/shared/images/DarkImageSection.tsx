@@ -1,11 +1,48 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Rejestrujemy ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export const DarkImageSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
+  const imageRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    let scrollTrigger: any = null;
+    
+    if (imageRef.current) {
+      // Animacja skalowania, obrotu i przezroczystości podczas scrollowania
+      const tween = gsap.to(imageRef.current, {
+        scale: 1,
+        rotation: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top 80%", // Start animacji gdy górna krawędź sekcji dotknie 80% wysokości viewport
+          end: "top 20%",   // Koniec animacji gdy górna krawędź sekcji dotknie 20% wysokości viewport
+          scrub: true, 
+          markers: false, // Animacja jest powiązana z scrollowaniem
+        }
+      });
+      
+      scrollTrigger = tween.scrollTrigger;
+    }
+    
+    // Cleanup tylko tego konkretnego ScrollTrigger
+    return () => {
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+    };
+  }, []);
   
   // Sprawdź czy translations są dostępne
   if (!translations || !translations.darkImageSection) {
@@ -13,16 +50,24 @@ export const DarkImageSection = (): React.JSX.Element => {
   }
   
   return (
-    <section className="relative w-full h-[70vh] sm:h-[80vh] lg:h-screen">
-      {/* Zdjęcie tła */}
-      <Image 
-        src="/images/career/cbg2.jpg" 
-        alt="Focus Electro - międzynarodowe projekty stoczniowe"
-        className="absolute inset-0 w-full h-full object-cover"
-        fill
-        sizes="100vw"
-        priority
-      />
+    <section className="relative w-full h-[70vh] sm:h-[80vh] lg:h-screen overflow-hidden">
+      {/* Zdjęcie tła z animacją GSAP */}
+      <div
+        ref={imageRef}
+        className="absolute inset-0 w-full h-full"
+        style={{
+          transform: "scale(0.5) rotate(-5deg)",
+        }}
+      >
+        <Image 
+          src="/images/career/cbg2.jpg" 
+          alt="Focus Electro - międzynarodowe projekty stoczniowe"
+          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+        />
+      </div>
       
       {/* Kontener z systemem kolumn */}
       <div className="relative z-10 h-full grid-system items-center">
@@ -31,10 +76,10 @@ export const DarkImageSection = (): React.JSX.Element => {
         
         {/* Karta z samym obrysem - 8 kolumn (od 3 do 10) */}
         <div className="grid-col-8">
-          <div className="border-4 border-gray-dark rounded-l h-fit sm:h-fit flex items-start justify-start">
+          <div className="border-4 border-gray-dark rounded-l h-[50vh] sm:h-[70vh] flex items-stretch justify-start">
             {/* Karta tekstowa - 4 kolumny wyśrodkowana */}
             <div className="w-full sm:w-1/2">
-              <div className="bg-gray-dark rounded-2xl p-6 sm:p-10 h-fit">
+              <div className="bg-gray-dark rounded-2xl p-6 sm:p-10 h-full flex flex-col justify-center">
                 <div className="text-start mb-4 sm:mb-6">
                   <p className="text-gray-light fonts-mono-xs tracking-wide mb-2 sm:mb-4">
                   {translations.darkImageSection.subtitle}

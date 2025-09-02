@@ -5,7 +5,7 @@ import { useTranslation } from "@/lib/i18n";
 import { InteractiveMap } from "./InteractiveMap";
 
 export const ProjectsMapsSection2 = (): React.JSX.Element => {
-  const { translations, language } = useTranslation();
+  const { translations } = useTranslation();
   
   // Sprawdź czy translations są dostępne
   if (!translations || !translations.projectsMapsSection) {
@@ -13,7 +13,9 @@ export const ProjectsMapsSection2 = (): React.JSX.Element => {
   }
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-[24px] mt-5 mb-40">
+    <section 
+      className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-[24px] mt-5 mb-40"
+    >
       <div className="flex flex-col items-center gap-16 w-full py-20 mb-40">
         <div className="flex flex-col items-center gap-16 w-full">
           {/* Header */}

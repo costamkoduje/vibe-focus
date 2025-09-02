@@ -17,7 +17,9 @@ export const metadata: Metadata = {
 export default function CoWorkPage() {
   return (
     <>
-      <HeroCoWorkSection />
+      <div className="horizontal-scroll-container">
+        <HeroCoWorkSection />
+      </div>
       <CoWorkOptionsSection />
       <ImageSection2 />
       <ProjectsMapsSection2 />

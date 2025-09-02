@@ -29,7 +29,7 @@ export const HeroSection = (): React.JSX.Element => {
           <div className="grid grid-cols-12 gap-5 w-full">
             
             {/* Sekcja z instalacjami elektrycznymi i przyciskami - kolumny 1-6 */}
-            <div className="col-span-12 lg:col-start-2 lg:col-span-6 flex flex-col gap-5">
+            <div className="col-span-12 lg:col-start-3 lg:col-span-4 flex flex-col gap-5">
               <div className="relative self-stretch w-full">
                 <h1 className="fonts-fig-l lg:fonts-fig-xl text-light text-center lg:text-left">
                   {translations.hero.subtitle.split('<br/>').map((line, index) => (
@@ -71,7 +71,7 @@ export const HeroSection = (): React.JSX.Element => {
             </div>
 
             {/* Główny tekst - kolumny 8-12 - widoczny tylko na desktopie */}
-            <div className="hidden lg:flex col-span-12 lg:col-start-8 lg:col-span-4 flex-col items-center lg:items-end gap-5 self-start lg:mt-[-80px]">
+            <div className="hidden lg:flex col-span-12 lg:col-start-7 lg:col-span-4 flex-col items-center lg:items-end gap-5 self-start lg:mt-[-80px]">
               <p className="relative w-full max-w-full sm:max-w-[500px] lg:max-w-[614px] fonts-mono-m text-gray-light text-center lg:text-right">
                 {translations.hero.description.split('<br/>').map((line, index) => (
                   <React.Fragment key={index}>

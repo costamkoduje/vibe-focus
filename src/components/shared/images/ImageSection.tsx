@@ -1,22 +1,67 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Rejestrujemy ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export const ImageSection = (): React.JSX.Element => {
-  const { translations, language } = useTranslation();
+  const { translations } = useTranslation();
+  const imageRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    let scrollTrigger: any = null;
+    
+    if (imageRef.current) {
+      // Animacja skalowania, obrotu i przezroczystości podczas scrollowania
+      const tween = gsap.to(imageRef.current, {
+        scale: 1.1,
+        rotation: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top 80%", // Start animacji gdy górna krawędź sekcji dotknie 80% wysokości viewport
+          end: "top 20%",   // Koniec animacji gdy górna krawędź sekcji dotknie 20% wysokości viewport
+          scrub: true, 
+          markers: false, // Animacja jest powiązana z scrollowaniem
+        }
+      });
+      
+      scrollTrigger = tween.scrollTrigger;
+    }
+    
+    // Cleanup tylko tego konkretnego ScrollTrigger
+    return () => {
+      if (scrollTrigger) {
+        scrollTrigger.kill();
+      }
+    };
+  }, []);
   
   return (
-    <section className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[85vh]">
-      {/* Zdjęcie tła */}
-      <Image 
-        src="/images/cowork/cobg.jpg" 
-        alt="Tło sekcji współpracy"
-        fill
-        className="absolute inset-0 w-full h-full object-cover"
-        priority={false}
-      />
+    <section className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[85vh] overflow-hidden " >
+      {/* Zdjęcie tła z animacją GSAP */}
+      <div
+        ref={imageRef}
+        className="absolute inset-0 w-full h-full "
+        style={{
+          transform: "scale(0.5) rotate(-5deg)",
+        }}
+      >
+        <Image 
+          src="/images/cowork/cobg.jpg" 
+          alt="Tło sekcji współpracy"
+          fill
+          className="w-full h-full object-cover rounded-3xl"
+          priority={false}
+        />
+      </div>
       
       {/* Kontener z systemem kolumn */}
       <div className="relative z-10 h-full grid-system items-center">
@@ -35,7 +80,7 @@ export const ImageSection = (): React.JSX.Element => {
                   </p>
                 </div>
                 
-                <h2 className="fonts-fig-l text-gray-dark text-start mb-4 sm:mb-8 leading-tight">
+                <h2 className="fonts-fig-l text-gray-dark text-start mb-4 sm:mb-8 leading-tight pb-10 pt-20">
                 {translations.imageSection.title}
                 </h2>  
                 <p className="text-gray-dark fonts-mono-l leading-relaxed text-left">

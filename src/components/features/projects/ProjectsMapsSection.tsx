@@ -5,7 +5,7 @@ import { useTranslation } from "@/lib/i18n";
 import { InteractiveMap } from "./InteractiveMap";
 
 export const ProjectsMapsSection = (): React.JSX.Element => {
-  const { translations, language } = useTranslation();
+  const { translations } = useTranslation();
   
 
   return (

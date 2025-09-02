@@ -1,16 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components";
 import { useTranslation, toggleLanguage, useI18n } from "@/lib/i18n";
 
+
 export const Navigation = (): React.JSX.Element => {
   const pathname = usePathname();
   const { translations } = useTranslation();
   const [isHydrated, setIsHydrated] = useState(false);
+  const navigationRef = useRef<HTMLDivElement>(null);
   
   // Sprawdzanie hydratacji Zustand
   useEffect(() => {
@@ -25,6 +27,8 @@ export const Navigation = (): React.JSX.Element => {
     
     return unsubscribe;
   }, []);
+
+
   const isRealizacjePage = pathname === "/projects";
   const isAboutPage = pathname === "/about";
   const isCareerPage = pathname === "/career";
@@ -42,7 +46,7 @@ export const Navigation = (): React.JSX.Element => {
   ];
 
   return (
-    <div id="navigation" className="flex flex-col w-full relative">
+    <div ref={navigationRef} id="navigation" className="flex flex-col w-full relative">
       {/* Mobile Navigation */}
       <div className="flex md:hidden w-full items-center justify-between gap-2 p-3">
         <Link href="/" className="flex items-center gap-2 bg-gray-dark rounded-m px-4 py-3 hover:bg-gray-dark/80 transition-colors">

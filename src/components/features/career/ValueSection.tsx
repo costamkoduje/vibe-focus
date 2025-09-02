@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -57,7 +56,7 @@ export const ValueSection = (): React.JSX.Element => {
           end: 'bottom center',
           scrub: 1,
           invalidateOnRefresh: true,
-          markers: true
+          markers: false
         }
       });
     });

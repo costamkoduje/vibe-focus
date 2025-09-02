@@ -1,7 +1,12 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/cards";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Rejestrujemy plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 // Typy dla lokalizacji na mapie
 interface MapLocation {
@@ -266,6 +271,50 @@ const LocationCard: React.FC<{
 export const InteractiveMap: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let tl: any = null;
+    
+    // Opóźnienie, aby poczekać na zakończenie poprzednich animacji
+    const timer = setTimeout(() => {
+      if (mapRef.current) {
+        // Ustawiamy początkowy stan animacji
+        gsap.set(mapRef.current, {
+          scale: 0.6,
+          rotation: -5,
+          transformOrigin: "center center"
+        });
+
+        // Tworzymy animację scroll trigger
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mapRef.current,
+            start: "top 80%", // Start animacji gdy górna krawędź sekcji dotknie 80% wysokości viewport
+            end: "top 30%",   // Koniec animacji gdy górna krawędź sekcji dotknie 30% wysokości viewport
+            scrub: 1,
+            toggleActions: "play none none reverse",
+            markers: false
+          }
+        });
+
+        tl.to(mapRef.current, {
+          scale: 1,
+          rotation: 0,
+          duration: 1,
+          ease: "power2.out"
+        });
+      }
+    }, 1000); // 1 sekunda opóźnienia
+    
+    // Cleanup function
+    return () => {
+      clearTimeout(timer);
+      if (tl && tl.scrollTrigger) {
+        tl.scrollTrigger.kill();
+      }
+    };
+  }, []);
 
   const handlePinClick = (location: MapLocation) => {
     setSelectedLocation(location);
@@ -288,6 +337,7 @@ export const InteractiveMap: React.FC = () => {
 
   return (
     <div 
+      ref={mapRef}
       className="bg-gray-dark rounded-xl relative overflow-hidden h-[60vh]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

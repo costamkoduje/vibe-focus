@@ -16,6 +16,36 @@ export const AboutSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
   const cardsRef = useRef<HTMLDivElement>(null);
   
+  useEffect(() => {
+    if (!cardsRef.current) return;
+
+    const cardElements = cardsRef.current.querySelectorAll('.card-wrapper');
+    const totalCardElements = cardElements.length;
+
+    cardElements.forEach((el, position) => {
+      const isLast = position === totalCardElements - 1;
+      
+      gsap.to(el, {
+        ease: 'none',
+        scale: 0.95,
+        opacity: 1,
+        yPercent: isLast ? 0 : 0,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+    });
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+  
   // Sprawdź czy translations są dostępne
   if (!translations || !translations.aboutSection || !translations.about?.services || translations.about.services.length < 6) {
     return <div>Ładowanie...</div>;
@@ -65,36 +95,6 @@ export const AboutSection = (): React.JSX.Element => {
       image: "/images/homepage/services/s6.jpg",
     },
   ];
-
-  useEffect(() => {
-    if (!cardsRef.current) return;
-
-    const cardElements = cardsRef.current.querySelectorAll('.card-wrapper');
-    const totalCardElements = cardElements.length;
-
-    cardElements.forEach((el, position) => {
-      const isLast = position === totalCardElements - 1;
-      
-      gsap.to(el, {
-        ease: 'none',
-        scale: 0.95,
-        opacity: 1,
-        yPercent: isLast ? 0 : 0,
-        scrollTrigger: {
-          trigger: el,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: 1,
-          invalidateOnRefresh: true
-        }
-      });
-    });
-
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
 
   return (
     <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 pb-20 relative bg-gray-dark rounded-l mt-5">
