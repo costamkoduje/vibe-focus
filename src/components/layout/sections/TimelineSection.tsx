@@ -61,7 +61,7 @@ export const TimelineSection = (): React.JSX.Element => {
           <div className="relative">
             {/* Large Year Background */}
             <div className="absolute top-[-100px] right-0 text-gray-light opacity-20 pointer-events-none">
-              <span className="fonts-fig-xxl-bold" style={{ fontSize: '350px', letterSpacing: '-18px' }}>
+              <span className="fonts-fig-xxl-bold" style={{ fontSize: 'clamp(175px, 20vw, 350px)', letterSpacing: '-18px' }}>
                 {timelineData[currentIndex]?.year || ''}
               </span>
             </div>

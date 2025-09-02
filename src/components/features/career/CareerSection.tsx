@@ -42,15 +42,15 @@ export const CareerSection = (): React.JSX.Element => {
           <div className="w-full">
             <div className="grid grid-cols-12 gap-5 mx-0">
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="col-span-1 md:col-span-2"></div>
               {/* Main content - 8 columns */}
-              <div className="col-span-8">
-                <div className="bg-gray-light rounded-l">
+              <div className="col-span-10 md:col-span-8">
+              <div className="bg-gray-light rounded-l">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-1 p-1">
                     {careerData.map((career, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-mid border-none rounded-l overflow-hidden"
+                        className="bg-gray-mid border-none rounded-l overflow-hidden w-full"
                       >
                         <CardContent className="p-8 flex flex-col items-start gap-8 text-left">
                           {/* Ikony PNG na górze - większe i szerokie */}
@@ -84,7 +84,7 @@ export const CareerSection = (): React.JSX.Element => {
                 </div>
               </div>
               {/* Empty space for centering - 2 columns */}
-              <div className="col-span-2"></div>
+              <div className="col-span-1 md:col-span-2"></div>
             </div>
           </div>
         </div>

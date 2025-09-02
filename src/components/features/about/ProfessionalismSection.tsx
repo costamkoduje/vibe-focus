@@ -8,9 +8,9 @@ export const ProfessionalismSection = (): React.JSX.Element => {
   const { translations } = useTranslation();
   
   return (
-    <section className="w-[calc(100%-2.5rem)] bg-gray-dark pt-20 mt-5 mx-5 rounded-t-3xl pb-80 mb-[-40px]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start mb-20">
-          <div className="lg:col-span-4 lg:col-start-3">
+    <section className="w-[calc(100%-2.5rem)] bg-gray-dark pt-20 mt-5 mx-5 rounded-t-3xl pb-30 md:pb-80 mb-[-80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start mb-10 md:mb-20">
+          <div className="lg:col-span-4 lg:col-start-3 px-10 md:px-0">
             <p className="fonts-mono-xs text-gray-mid uppercase mb-4">
               {translations.aboutPage.professionalism.title}
             </p>
