@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Button, AnimatedArrowButton } from "@/components";
 import { useTranslation } from "@/lib/i18n";
 
@@ -49,14 +50,16 @@ export const CallToActionSection = (): React.JSX.Element => {
               <div className="grid grid-cols-8 gap-1 group">
                 {/* Przycisk "Napisz do nas!" - 7 kolumn */}
                 <div className="col-span-7">
-                  <Button 
-                    variant="secondary" 
-                    size="default"
-                    className="w-full h-25 justify-start bg-gray-dark fonts-fig-l text-light rounded-l transition-colors border border-accent group-hover:bg-gray-mid hover:bg-gray-mid py-8"
-                    style={{ textTransform: 'none' }}
-                  >
-                    {translations.callToAction.button}
-                  </Button>
+                  <Link href="/contact">
+                    <Button 
+                      variant="secondary" 
+                      size="default"
+                      className="w-full h-25 justify-start bg-gray-dark fonts-fig-l text-light rounded-l transition-colors border border-accent group-hover:bg-gray-mid hover:bg-gray-mid py-8"
+                      style={{ textTransform: 'none' }}
+                    >
+                      {translations.callToAction.button}
+                    </Button>
+                  </Link>
                 </div>
                 
                 {/* Przycisk ze strzałką - 1 kolumna */}

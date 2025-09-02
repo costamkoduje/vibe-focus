@@ -27,9 +27,9 @@ export const AboutSection = (): React.JSX.Element => {
       
       gsap.to(el, {
         ease: 'none',
-        scale: 0.95,
+        scale: 1,
         opacity: 1,
-        yPercent: isLast ? 0 : 0,
+        yPercent: isLast ? 0 : 0, // Ostatnia karta przesuwa się w górę o 20%
         scrollTrigger: {
           trigger: el,
           start: 'top center',

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components";
 import { useTranslation } from "@/lib/i18n";
 
@@ -62,10 +63,10 @@ export const ContactHeroSection = (): React.JSX.Element => {
     }
   };
 
-  return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-l mt-5 mb-80">
-      <div className="flex flex-col items-center gap-16 w-full py-20 pb-20">
-        <div className="flex flex-col items-center gap-16 w-full ">
+          return (
+      <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-l pt-10 mt-5 min-h-[calc(100vh-130px)] mb-5">
+        <div className="flex flex-col items-center gap-16 w-full flex-1 justify-center">
+          <div className="flex flex-col items-center gap-16 w-full">
           {/* Contact Content Grid - 8 columns width */}
           <div className="w-full">
             <div className="grid grid-cols-12 gap-5 mx-0">
@@ -250,6 +251,42 @@ export const ContactHeroSection = (): React.JSX.Element => {
               <div className="col-span-2"></div>
             </div>
           </div>
+        </div>
+      </div>
+      
+              {/* Footer z logo i napisem */}
+        <div className="w-full my-10">
+        <div className="grid grid-cols-12 gap-5 mx-0">
+          {/* Empty space for centering - 2 columns */}
+          <div className="col-span-2"></div>
+          {/* Main content - 8 columns */}
+          <div className="col-span-8">
+            {/* Dolna część z logo i tekstem */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              {/* Logo i nazwa */}
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/images/icons/logoFE.svg"
+                  alt="Focus Electro Logo"
+                  width={35.48}
+                  height={52}
+                  className="w-[35.48px] h-[52px]"
+                />
+                <span className="fonts-mono-l text-gray-light">
+                  FOCUS<br/>ELECTRO
+                </span>
+              </div>
+              
+              {/* Tekst po prawej */}
+              <div className="text-right">
+                <span className="fonts-mono-xs text-gray-light">
+                  DESIGN & DEV BY VIBECODING
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* Empty space for centering - 2 columns */}
+          <div className="col-span-2"></div>
         </div>
       </div>
     </section>

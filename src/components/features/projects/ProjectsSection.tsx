@@ -48,7 +48,7 @@ export const ProjectsSection = (): React.JSX.Element => {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: -323, // 320px szerokość + 3px gap
+        left: -423, // 420px szerokość + 3px gap
         behavior: 'smooth'
       });
     }
@@ -57,7 +57,7 @@ export const ProjectsSection = (): React.JSX.Element => {
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
-        left: 323, // 320px szerokość + 3px gap
+        left: 423, // 420px szerokość + 3px gap
         behavior: 'smooth'
       });
     }
@@ -80,7 +80,7 @@ export const ProjectsSection = (): React.JSX.Element => {
         </div>
 
         {/* Projects Carousel */}
-        <div className="w-full relative bg-gray-mid overflow-hidden">
+        <div className="w-full relative bg-dark">
           <div 
             ref={scrollContainerRef}
             className="flex gap-1 py-1 overflow-x-auto scrollbar-hide pl-4"
@@ -88,7 +88,7 @@ export const ProjectsSection = (): React.JSX.Element => {
             {infiniteProjects.map((project, index) => (
               <div
                 key={`${project.id}-${index}`}
-                className="flex-shrink-0 w-[320px] h-[400px] bg-gray-mid rounded-xl p-5 flex flex-col justify-end relative overflow-hidden"
+                className="flex-shrink-0 w-[380px] h-[480px] bg-gray-mid rounded-xl p-5 flex flex-col justify-end relative overflow-hidden"
               >
                 {/* Background Image */}
                 <Image
@@ -96,7 +96,7 @@ export const ProjectsSection = (): React.JSX.Element => {
                   alt={project.name}
                   fill
                   className="object-cover absolute inset-0 z-0"
-                  sizes="320px"
+                  sizes="400px"
                 />
                 {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0  z-10"></div>

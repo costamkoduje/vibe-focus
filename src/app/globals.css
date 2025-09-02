@@ -590,3 +590,23 @@ body {
     z-index: auto;
   }
 }
+
+/* Go Top Button Styles */
+.go-top-button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.go-top-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments dla go top button */
+@media (max-width: 768px) {
+  .go-top-button {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}

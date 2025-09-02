@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Figtree } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/components/providers/I18nProvider";
+import { GoTopButton } from "@/components/ui/buttons/go-top-button";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased bg-gray-mid`}>
         <I18nProvider>
           {children}
+          <GoTopButton />
         </I18nProvider>
       </body>
     </html>
