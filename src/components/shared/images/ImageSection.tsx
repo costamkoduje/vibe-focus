@@ -14,7 +14,7 @@ export const ImageSection = (): React.JSX.Element => {
   const imageRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    let scrollTrigger: any = null;
+    let scrollTrigger: gsap.plugins.ScrollTriggerInstance | null = null;
     
     if (imageRef.current) {
       // Animacja skalowania, obrotu i przezroczystości podczas scrollowania
@@ -33,7 +33,7 @@ export const ImageSection = (): React.JSX.Element => {
         }
       });
       
-      scrollTrigger = tween.scrollTrigger;
+      scrollTrigger = tween.scrollTrigger || null;
     }
     
     // Cleanup tylko tego konkretnego ScrollTrigger

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface GoTopButtonProps {
@@ -14,7 +15,6 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -27,7 +27,6 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
       const shouldShow = currentScrollY > threshold && isScrollingUpNow;
       
       setIsVisible(shouldShow);
-      setIsScrollingUp(isScrollingUpNow);
       setLastScrollY(currentScrollY);
     };
 
@@ -61,11 +60,11 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
       )}
       aria-label="Przejdź na górę strony"
     >
-      <img
+      <Image
         src="/images/icons/arrow.svg"
         alt="Strzałka w górę"
-        width="20"
-        height="20"
+        width={20}
+        height={20}
         className="transition-colors duration-300 -rotate-90 filter brightness-0 saturate-100 invert-0"
         style={{ filter: 'brightness(0) saturate(100%) invert(24%) sepia(8%) saturate(1038%) hue-rotate(202deg) brightness(94%) contrast(86%)' }}
       />

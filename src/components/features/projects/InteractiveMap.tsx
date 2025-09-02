@@ -274,7 +274,7 @@ export const InteractiveMap: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let tl: any = null;
+    let tl: gsap.core.Timeline | null = null;
     
     // Opóźnienie, aby poczekać na zakończenie poprzednich animacji
     const timer = setTimeout(() => {

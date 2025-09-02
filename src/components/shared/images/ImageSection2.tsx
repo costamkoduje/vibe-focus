@@ -14,7 +14,7 @@ export const ImageSection2 = (): React.JSX.Element => {
   const imageRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    let scrollTrigger: any = null;
+    let scrollTrigger: gsap.plugins.ScrollTriggerInstance | null = null;
     
     // Opóźnienie, aby poczekać na zakończenie horizontal scroll
     const timer = setTimeout(() => {
@@ -35,7 +35,7 @@ export const ImageSection2 = (): React.JSX.Element => {
           }
         });
         
-        scrollTrigger = tween.scrollTrigger;
+        scrollTrigger = tween.scrollTrigger || null;
       }
     }, 500); // 500ms opóźnienia
     
