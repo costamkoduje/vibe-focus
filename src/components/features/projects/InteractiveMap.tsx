@@ -216,11 +216,11 @@ const LocationCard: React.FC<{
 }> = ({ location, onClose }) => {
   if (!location) return null;
 
-  return (
+    return (
     <>
       {/* Overlay do zamykania karty */}
       <div 
-       
+        className="absolute inset-0 bg-black bg-opacity-50 z-20"
         onClick={onClose}
       />
       
