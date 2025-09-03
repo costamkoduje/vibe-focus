@@ -65,7 +65,7 @@ export const TeamSection = (): React.JSX.Element => {
                     <div className="fonts-mono-xs text-gray-dark tracking-wide pt-10">
                     {translations.aboutPage?.team?.subtitle || "(Nasz zespół)"}
                     </div>
-                    <h2 className="fonts-fig-l text-gray-dark leading-tight pt-20 pb-10">
+                    <h2 className="fonts-fig-l text-gray-dark leading-tight md:pt-20 md:pb-10">
                     {translations.aboutPage?.team?.mainTitle || "Gdzie każdy elektromonter staje się częścią czegoś większego"}
                     </h2>
                   </div>

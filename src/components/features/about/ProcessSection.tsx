@@ -35,7 +35,7 @@ export const ProcessSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-8 md:gap-16 pb-10 md:pb-20 relative bg-gray-mid rounded-l mt-5 mb-5">
+    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-8 md:gap-16 pb-10 md:pb-20 relative bg-gray-mid rounded-l mt-5 mb-5">
       <div className="flex flex-col items-center gap-8 md:gap-16 w-full py-10 md:py-20">
         <div className="flex flex-col items-center gap-8 md:gap-16 w-full">
           {/* Header */}
@@ -58,7 +58,7 @@ export const ProcessSection = (): React.JSX.Element => {
 
           {/* Bento Grid - Responsive layout */}
           <div className="w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-5 mx-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-5 mx-5 md:mx-0">
               {/* Empty space for centering - 2 columns on desktop */}
               <div className="hidden lg:block lg:col-span-2"></div>
               {/* Main content - 8 columns on desktop, full width on mobile */}

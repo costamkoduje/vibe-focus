@@ -10,8 +10,8 @@ export const HeroAboutSection = (): React.JSX.Element => {
   return (
     <section className="relative w-full flex flex-col px-0  md:px-5">
       {/* Text Section - 70vh */}
-      <div className="relative w-full h-[60vh] sm:h-[80vh] lg:h-[88vh] flex items-center justify-center bg-gray-dark rounded-t-[20px] md:mt-4">
-        <div className="text-center max-w-3xl md:max-w-6xl mx-5 md:mx-0">
+      <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[88vh] flex items-center justify-center bg-gray-dark rounded-t-[20px] md:mt-4">
+        <div className="text-center max-w-3xl md:max-w-6xl mx-10 md:mx-0">
           <p className="fonts-mono-xs text-gray-light uppercase mb-6">
             {translations.aboutPage.hero.subtitle}
           </p>

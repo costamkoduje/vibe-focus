@@ -79,7 +79,7 @@ export const ImageSection2 = (): React.JSX.Element => {
         
         {/* Karta z samym obrysem - 8 kolumn (od 3 do 10) */}
         <div className="grid-col-8">
-          <div className="border-4 border-gray-dark rounded-l h-[40vh] sm:h-[60vh] flex items-stretch justify-start">
+          <div className="border-4 border-gray-dark rounded-l h-[50vh] sm:h-[60vh] flex items-stretch justify-start">
             {/* Karta tekstowa - 4 kolumny wyśrodkowana */}
             <div className="w-full sm:w-1/2">
               <div className="bg-gray-dark rounded-2xl p-6 sm:p-10 h-full flex flex-col justify-center">

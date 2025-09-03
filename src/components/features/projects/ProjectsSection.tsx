@@ -70,7 +70,7 @@ export const ProjectsSection = (): React.JSX.Element => {
     <section className="flex flex-col w-full sm:w-[calc(100%-2rem)] lg:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark rounded-b-[24px] mb-5">
       <div className="flex flex-col items-center gap-16 w-full py-20">
         {/* Header */}
-        <div className="flex flex-col items-center gap-8 pt-5 text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center gap-8 pt-5 md:px-0 px-5 text-center max-w-4xl mx-auto">
           <p className="fonts-mono-xs text-gray-light uppercase tracking-wide">
           {translations.projects.subtitle}
           </p>

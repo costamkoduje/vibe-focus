@@ -14,7 +14,7 @@ export const ProjectsMapsSection2 = (): React.JSX.Element => {
 
   return (
     <section 
-      className="flex flex-col w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-[24px] mt-5 md:mb-40 mb-0"
+      className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-[24px] mt-5 md:mb-40 mb-0"
     >
       <div className="flex flex-col items-center gap-16 w-full py-20 mb-0 md:mb-40">
         <div className="flex flex-col items-center gap-16 w-full">
@@ -31,7 +31,7 @@ export const ProjectsMapsSection2 = (): React.JSX.Element => {
                 </React.Fragment>
               ))}
             </h2>
-            <p className="fonts-mono-m text-gray-dark uppercase leading-relaxed max-w-col-3xl mx-auto">
+            <p className="fonts-mono-m text-gray-dark uppercase leading-relaxed max-w-col-3xl mx-5 md:mx-auto">
               {translations.projectsMapsSection.description}
             </p>
           </header>
