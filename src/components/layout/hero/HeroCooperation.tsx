@@ -67,7 +67,7 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          start: "top 7%",
+          start: "top 105px",
           scrub: 1,
           end: () => "+=" + totalWidth,
           anticipatePin: 1,
@@ -86,6 +86,16 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
           }
         }
       });
+
+      // Dodajemy osobny ScrollTrigger dla nawigacji
+      ScrollTrigger.create({
+        trigger: "#navigation",
+        pin: true,
+        start: "top top",
+        end: () => "+=" + totalWidth,
+        anticipatePin: 1,
+        pinSpacing: false
+      });
     }, 100);
 
     // Cleanup
@@ -102,7 +112,8 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
     <section 
       ref={sectionRef}
       id="horizontal-scroll-section" 
-      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-3xl mt-4 mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh]"
+      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-3xl mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh] mt-5"
+      style={{ paddingTop: '80px' }} // Dodajemy miejsce dla nawigacji
     >
       
       <div 
