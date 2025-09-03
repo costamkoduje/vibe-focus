@@ -14,7 +14,7 @@ export const en: Translations = {
         description: "We provide professional distribution, installation and connection of low voltage cabling on marine and industrial units. We perform precise measurements, ensuring safety and system reliability"
       },
       {
-        title: "Preparatory work (Metawork)",
+        title: "Preparatory work (Metalwork)",
         description: "We perform precise preparatory work such as installation of cable routes, foundations, supports and Roxtec cable penetrations, as well as welding of steel elements for electrical installations. We provide solid and safe infrastructure preparation, ensuring smooth installation and reliability of installations at every stage of the project."
       },
       {
@@ -96,7 +96,10 @@ export const en: Translations = {
       "experience",
       "trust",
       "global services"
-    ]
+    ],
+    values: {
+      experience: "8 years"
+    }
   },
   callToAction: {
     title: "With us, you always<br/>sail with the current.",

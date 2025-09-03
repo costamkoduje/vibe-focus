@@ -102,7 +102,7 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
     <section 
       ref={sectionRef}
       id="horizontal-scroll-section" 
-      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-l mt-5 mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh]"
+      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-3xl mt-4 mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh]"
     >
       
       <div 

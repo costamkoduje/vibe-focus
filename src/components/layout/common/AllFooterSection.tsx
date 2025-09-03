@@ -4,9 +4,9 @@ import { FooterSection } from "./FooterSection";
 
 export const AllFooterSection = (): React.JSX.Element => {
   return (
-    <div className="relative w-full mt-5">
+    <div className="relative w-full mt-10">
       {/* FooterSection jako podłoże - z paddingiem na dole aby treść nie była zasłonięta */}
-      <div className="relative z-10">
+      <div className="relative z-10 mt-5">
         <FooterSection />
       </div>
       

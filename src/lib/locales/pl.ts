@@ -14,7 +14,7 @@ export const pl: Translations = {
         description: "Realizujemy profesjonalne rozprowadzenie, montaż oraz podłączenie niskonapięciowego okablowania na jednostkach morskich i przemysłowych. Wykonujemy precyzyjne pomiary, gwarantując bezpieczeństwo oraz niezawodność systemu"
       },
       {
-        title: "Prace przygotowawcze (Metawork)",
+        title: "Prace przygotowawcze (Metalwork)",
         description: "Wykonujemy precyzyjne prace przygotowawcze, takie jak montaż tras kablowych, fundamentów, wsporników oraz przejść kablowych Roxtec, a także spawanie elementów stalowych pod instalacje elektryczne. Zapewniamy solidne i bezpieczne przygotowanie infrastruktury, gwarantując sprawny montaż i niezawodność instalacji na każdym etapie projektu."
       },
       {
@@ -96,7 +96,10 @@ export const pl: Translations = {
       "doświadczenie",
       "zaufanie",
       "global servicess"
-    ]
+    ],
+    values: {
+      experience: "8 lat"
+    }
   },
   callToAction: {
     title: "Z nami zawsze<br/>płyniesz z prądem.",

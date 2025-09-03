@@ -16,7 +16,7 @@ export const StatsSection = (): React.JSX.Element => {
           <path d="M19.3332 6.66699H12.6665V4.00033C12.6665 3.26699 13.2665 2.66699 13.9998 2.66699H17.9998C18.7332 2.66699 19.3332 3.26699 19.3332 4.00033V6.66699Z" stroke="#CAD3D7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      value: "250+",
+      value: "200+",
       description: translations.stats.descriptions[0]
     },
     {
@@ -40,7 +40,7 @@ export const StatsSection = (): React.JSX.Element => {
           <path d="M16.6663 29.3337C24.0301 29.3337 29.9997 23.3641 29.9997 16.0003C29.9997 8.63653 24.0301 2.66699 16.6663 2.66699C9.30254 2.66699 3.33301 8.63653 3.33301 16.0003C3.33301 23.3641 9.30254 29.3337 16.6663 29.3337Z" stroke="#CAD3D7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      value: "100+",
+      value: "80+",
       description: translations.stats.descriptions[2]
     },
     {
@@ -54,7 +54,7 @@ export const StatsSection = (): React.JSX.Element => {
           <path d="M25.5602 26.6409C27.6073 26.6409 29.2669 24.9813 29.2669 22.9342C29.2669 20.8871 27.6073 19.2275 25.5602 19.2275C23.513 19.2275 21.8535 19.2275 21.8535 22.9342C21.8535 24.9813 23.513 26.6409 25.5602 26.6409Z" stroke="#CAD3D7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      value: "10 lat",
+      value: translations.stats.values?.experience || "8 lat",
       description: translations.stats.descriptions[3]
     },
     {

@@ -64,7 +64,7 @@ export const ContactHeroSection = (): React.JSX.Element => {
   };
 
           return (
-      <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark md:rounded-2xl pt-10 mt-5 min-h-[calc(100vh-130px)] mb-0 md:mb-5">
+      <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-dark md:rounded-3xl pt-10 mt-4 min-h-[calc(100vh-130px)] mb-0 md:mb-5">
         <div className="flex flex-col items-center gap-16 w-full flex-1 justify-center">
           <div className="flex flex-col items-center gap-16 w-full">
           {/* Contact Content Grid - 8 columns width */}

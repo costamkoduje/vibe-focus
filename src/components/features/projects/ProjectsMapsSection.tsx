@@ -9,7 +9,7 @@ export const ProjectsMapsSection = (): React.JSX.Element => {
   
 
   return (
-    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-t-[24px] mt-5">
+    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] mx-auto items-center gap-16 relative bg-gray-light rounded-t-[24px] mt-4">
       <div className="flex flex-col items-center gap-16 w-full py-20">
         <div className="flex flex-col items-center gap-16 w-full">
           {/* Header */}

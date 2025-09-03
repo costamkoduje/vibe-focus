@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components";
 import { useTranslation } from "@/lib/i18n";
 
 export const StandardSection = (): React.JSX.Element => {
-  const { translations } = useTranslation();
+  const { translations, language } = useTranslation();
   
   const standards = translations.careerPage?.standards?.items || [
     {
@@ -32,11 +32,12 @@ export const StandardSection = (): React.JSX.Element => {
     }
   ];
 
+  // Wybierz odpowiednie obrazy w zależności od języka
   const images = [
-    "/images/career/cb1a.png",
-    "/images/career/cb2a.png",
+    language === 'en' ? "/images/career/cb1aen.png" : "/images/career/cb1a.png",
+    language === 'en' ? "/images/career/cb2aen.png" : "/images/career/cb2a.png",
     "/images/career/cb3a.png",
-    "/images/career/cb4a.png",
+    language === 'en' ? "/images/career/cb4aen.png" : "/images/career/cb4a.png",
     "/images/career/cb5a.png"
   ];
 

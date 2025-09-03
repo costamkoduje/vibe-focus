@@ -29,6 +29,14 @@ const mapLocations: MapLocation[] = [
     isActive: true
   },
   {
+    id: "singapore",
+    name: "Singapore",
+    x: 105,
+    y: 35,
+    shipyards: ["Singapore"],
+    isActive: true
+  },
+  {
     id: "australia",
     name: "Australia",
     x: 110,
@@ -88,7 +96,7 @@ const mapLocations: MapLocation[] = [
     id: "greece",
     name: "Greece",
     x: 54,
-    y: 35,
+    y: 34,
     shipyards: ["Ateny, Korfu"],
     isActive: true
   },
@@ -111,8 +119,8 @@ const mapLocations: MapLocation[] = [
   {
     id: "maroco",
     name: "Maroc",
-    x: 46,
-    y: 52,
+    x: 41,
+    y: 36,
     shipyards: ["Casablanca"],
     isActive: true
   },
@@ -152,7 +160,7 @@ const mapLocations: MapLocation[] = [
     id: "italy",
     name: "Italy",
     x: 50,
-    y: 35,
+    y: 36,
     shipyards: ["Civitavecchia, Genua, Palermo "],
     isActive: true
   },

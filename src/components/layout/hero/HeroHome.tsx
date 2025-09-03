@@ -11,7 +11,7 @@ export const HeroSection = (): React.JSX.Element => {
     <div className="flex flex-col w-full sm:w-[calc(100%-2rem)] lg:w-[calc(100%-2.5rem)] mx-auto relative">
       {/* Hero Content */}
       <section 
-        className="flex flex-col w-full items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-0 py-12 sm:py-20 lg:py-40 relative rounded-l overflow-hidden md:mt-4"
+        className="flex flex-col w-full items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-0 py-12 sm:py-20 lg:py-40 relative rounded-3xl overflow-hidden md:mt-4"
         style={{
           height: 'calc(100vh - 80px)', // Responsywna wysokość - mniejsza na mobile
           minHeight: '500px', // Minimalna wysokość na mobile

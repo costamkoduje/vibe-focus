@@ -57,15 +57,15 @@ export const TeamSection = (): React.JSX.Element => {
           <div className="grid-col-2"></div>
           {/* Main content - 8 columns */}
           <div className="grid-col-8">
-            <div className="w-full rounded-xl overflow-hidden border-4 border-gray-light">
-              <div className="grid grid-cols-12">
+            <div className="w-full rounded-xl overflow-hidden border-4 border-gray-light max-h-[600px]">
+              <div className="grid grid-cols-12 h-full">
                 {/* Left side - Text content with gray background (6 columns) */}
-                <div className="col-span-12 lg:col-span-6 bg-gray-light p-8 lg:p-12">
+                <div className="col-span-12 lg:col-span-6 bg-gray-light p-8 lg:p-12 flex flex-col justify-center">
                   <div className="space-y-6">
-                    <div className="fonts-mono-xs text-gray-dark tracking-wide pt-10">
+                    <div className="fonts-mono-xs text-gray-dark tracking-wide">
                     {translations.aboutPage?.team?.subtitle || "(Nasz zespół)"}
                     </div>
-                    <h2 className="fonts-fig-l text-gray-dark leading-tight md:pt-20 md:pb-10">
+                    <h2 className="fonts-fig-l text-gray-dark leading-tight">
                     {translations.aboutPage?.team?.mainTitle || "Gdzie każdy elektromonter staje się częścią czegoś większego"}
                     </h2>
                   </div>

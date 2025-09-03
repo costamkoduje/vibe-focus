@@ -38,6 +38,9 @@ export interface ProjectsTranslations {
 
 export interface StatsTranslations {
   descriptions: string[];
+  values: {
+    experience: string;
+  };
 }
 
 export interface CallToActionTranslations {

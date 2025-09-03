@@ -45,7 +45,7 @@ export const GoTopButton: React.FC<GoTopButtonProps> = ({
     <button
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-5 right-5 z-50",
+        "fixed bottom-5 right-10 z-50",
         "w-14 h-14 rounded-m",
         "bg-gray-mid border-4 border-gray-dark",
         "flex items-center justify-center",
