@@ -155,8 +155,8 @@ export const FilarSection = (): React.JSX.Element => {
 
   return (
     <section className="relative w-full flex flex-col mb-5">
-      <div className="relative w-full md:w-[calc(100%-2.5rem)] md:mx-auto bg-gray-mid rounded-l pt-20 pb-20">
-        <div className="max-w-6xl mx-auto px-5 md:px-0">
+      <div className="relative w-full md:w-[calc(100%-2.5rem)] md:mx-auto bg-gray-mid rounded-l pt-10 md:pt-20 md:pb-20">
+        <div className="max-w-5xl mx-auto px-5 md:px-10">
         <div className="grid grid-cols-8 gap-5 lg:gap-5 px-5 md:px-0">
           {/* Header Section */}
           <div className="col-span-8 lg:col-start-2 lg:col-span-6 text-center">

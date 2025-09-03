@@ -10,7 +10,7 @@ export const HeroCareerSection = (): React.JSX.Element => {
   return (
     <section className="relative w-full flex flex-col md:px-5 px-0">
       {/* Text Section - 70vh */}
-      <div className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[88vh] flex items-center justify-center bg-gray-dark rounded-t-[20px] sm:mt-4 px-5 sm:px-5">
+      <div className="relative w-full h-[60vh] sm:h-[80vh] lg:h-[88vh] flex items-center justify-center bg-gray-dark rounded-t-[20px] sm:mt-4 px-5 sm:px-5">
         <div className="text-center max-w-6xl">
           <p className="fonts-mono-xs text-gray-light uppercase mb-6">
             {translations.careerPage.hero.subtitle}

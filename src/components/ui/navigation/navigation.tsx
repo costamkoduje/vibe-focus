@@ -49,7 +49,7 @@ export const Navigation = (): React.JSX.Element => {
     <div ref={navigationRef} id="navigation" className="flex flex-col w-full relative">
       {/* Mobile Navigation */}
       <div className="flex md:hidden w-full items-center justify-between gap-2 ">
-        <Link href="/" className="flex items-center gap-2 px-4 py-3 hover:opacity-80 transition-opacity min-h-[44px]">
+        <Link href="/" className="flex items-center gap-2 mx-5 py-3 hover:opacity-80 transition-opacity min-h-[44px]">
           <Image className="w-6 h-8" alt="Logo FE" src="/images/icons/logoFEdark.svg" width={24} height={32} />
           <div className="fonts-mono-l text-gray-dark leading-tight">
             {translations.navigation.companyName.split(' ').map((word, index, array) => (
@@ -62,7 +62,7 @@ export const Navigation = (): React.JSX.Element => {
         </Link>
         
         <Button 
-          className="bg-gray-light hover:bg-gray-light/90 text-dark rounded-m px-4 py-3 fonts-mono-xs min-h-[44px] min-w-[80px]"
+          className="bg-gray-light hover:bg-gray-light/90 text-gray-dark rounded-m px-4 py-3 fonts-mono-xs min-h-[44px] min-w-[80px] mx-5"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? 'ZAMKNIJ' : 'MENU'}

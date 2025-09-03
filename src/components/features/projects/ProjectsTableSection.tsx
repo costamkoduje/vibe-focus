@@ -81,7 +81,7 @@ export const ProjectsTableSection = (): React.JSX.Element => {
 
   return (
     <section className="flex flex-col w-full items-center gap-16 px-5 pt-5 md:pb-40 pb-0 relative">
-      <div className="flex flex-col items-center gap-16 w-full bg-gray-mid rounded-xl py-20 ">
+      <div className="flex flex-col items-center gap-16 w-full bg-gray-mid rounded-xl pb-20 ">
         <div className="flex flex-col items-center gap-16 w-full max-w-7xl px-4 sm:px-8 lg:px-16">
           {/* Header */}
           <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">

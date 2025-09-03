@@ -11,7 +11,7 @@ export const HeroSection = (): React.JSX.Element => {
     <div className="flex flex-col w-full sm:w-[calc(100%-2rem)] lg:w-[calc(100%-2.5rem)] mx-auto relative">
       {/* Hero Content */}
       <section 
-        className="flex flex-col w-full items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-5 py-12 sm:py-20 lg:py-40 relative rounded-l overflow-hidden"
+        className="flex flex-col w-full items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-0 py-12 sm:py-20 lg:py-40 relative rounded-l overflow-hidden md:mt-4"
         style={{
           height: 'calc(100vh - 80px)', // Responsywna wysokość - mniejsza na mobile
           minHeight: '500px', // Minimalna wysokość na mobile
@@ -22,7 +22,7 @@ export const HeroSection = (): React.JSX.Element => {
         }}
       >
         {/* Overlay dla lepszej czytelności tekstu */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-dark/80 via-gray-dark/60 to-gray-dark/40 rounded-l"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-dark/80 via-gray-dark/60 to-gray-dark/40 rounded-l "></div>
         
         {/* Content Container z Grid */}
         <div className="relative z-10 w-full">
@@ -32,7 +32,7 @@ export const HeroSection = (): React.JSX.Element => {
             {/* Sekcja z instalacjami elektrycznymi i przyciskami - kolumny 1-6 */}
             <div className="col-span-12 lg:col-start-3 lg:col-span-4 flex flex-col gap-5">
               <div className="relative self-stretch w-full">
-                <h1 className="fonts-fig-l lg:fonts-fig-xl text-light text-center lg:text-left">
+                <h1 className="fonts-fig-l lg:fonts-fig-xl text-light text-center lg:text-left pb-5">
                   {translations.hero.subtitle.split('<br/>').map((line, index) => (
                     <React.Fragment key={index}>
                       {line}

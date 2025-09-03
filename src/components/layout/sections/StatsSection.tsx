@@ -79,10 +79,10 @@ export const StatsSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-center py-20 relative bg-gray-mid pb-20">
+    <section className="flex flex-col w-full items-center py-10 relative bg-gray-mid pb-20">
       <div className="w-full pb-5 md:pb-40">
         {/* Grid container */}
-        <div className="grid-system pb-5 md:pb-40">
+        <div className="grid-system pb-5 md:pb-20">
           {/* Empty space for centering - 2 columns */}
           <div className="grid-col-2"></div>
           {/* Main stats panel - 8 columns */}

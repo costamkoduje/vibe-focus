@@ -35,7 +35,8 @@ export const AboutSection = (): React.JSX.Element => {
           start: 'top center',
           end: 'bottom center',
           scrub: 1,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          markers: false
         }
       });
     });
@@ -97,12 +98,12 @@ export const AboutSection = (): React.JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] md:mx-auto items-center gap-16 pb-20 relative bg-gray-dark md:rounded-l mt-5">
-      <div className="flex flex-col items-center gap-16 w-full py-20">
-        <div className="flex flex-col items-center gap-16 w-full">
+    <section className="flex flex-col w-full md:w-[calc(100%-2.5rem)] md:mx-auto items-center gap-16 pb-20 relative bg-gray-dark md:rounded-3xl mt-5">
+      <div className="flex flex-col items-center gap-16 w-full">
+        <div className="flex flex-col items-center gap-16 w-full pb-10">
           {/* Header */}
           <header className="text-center">
-            <p className="fonts-mono-xs text-gray-light mb-4 max-w-col-l mx-auto">
+            <p className="fonts-mono-xs text-gray-light mb-4 max-w-col-l mx-auto  pt-20">
               {translations.aboutSection.subtitle}
             </p>
             <h2 className="fonts-fig-l text-light mb-8 max-w-col-2xl mx-auto">
@@ -125,12 +126,12 @@ export const AboutSection = (): React.JSX.Element => {
 
           {/* Services Grid - responsive */}
           <div className="w-full services-container" ref={cardsRef}>
-            <div className="w-full max-w-6xl mx-auto px-4 md:px-8">
+            <div className="w-full max-w-5xl mx-auto px-4 md:px-10">
               <div className="flex flex-col gap-12">
                 {services.map((service) => (
                   <div key={service.id} className="card-wrapper">
                     <Card className="card flex w-full h-auto flex-col md:flex-row items-stretch gap-8 relative bg-gray-mid rounded-l overflow-hidden">
-                    <CardContent className="grid grid-cols-1 md:grid-cols-5 w-full h-auto md:h-[60vh] gap-0 p-1">
+                    <CardContent className="grid grid-cols-1 md:grid-cols-5 w-full h-auto md:h-[70vh] gap-0 p-1">
                         {/* Numer - na górze na mobile */}
                         <div className="p-8 md:col-span-2 md:flex md:flex-col md:justify-between">
                           <div className="fonts-mono-l text-gray-dark font-bold">

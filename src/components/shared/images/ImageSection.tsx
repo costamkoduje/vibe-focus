@@ -45,7 +45,7 @@ export const ImageSection = (): React.JSX.Element => {
   }, []);
   
   return (
-    <section className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[85vh] overflow-hidden " >
+    <section className="relative w-full h-[80vh] sm:h-[80vh] lg:h-[90vh] overflow-hidden " >
       {/* Zdjęcie tła z animacją GSAP */}
       <div
         ref={imageRef}

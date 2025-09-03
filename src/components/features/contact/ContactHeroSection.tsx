@@ -255,7 +255,7 @@ export const ContactHeroSection = (): React.JSX.Element => {
       </div>
       
               {/* Footer z logo i napisem */}
-        <div className="w-full md:w-[calc(100%-2.5rem)] mx-aut">
+        <div className="w-full mx-au pb-5">
         <div className="grid grid-cols-12 gap-5 mx-0  px-10 md:px-0">
           {/* Empty space for centering - 2 columns */}
           <div className="hidden md:block col-span-2"></div>

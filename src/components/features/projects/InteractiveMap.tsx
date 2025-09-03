@@ -220,11 +220,12 @@ const LocationCard: React.FC<{
     <>
       {/* Overlay do zamykania karty */}
       <div 
-        className="absolute inset-0 bg-black bg-opacity-50 z-20"
+        className="absolute inset-0 bg-black bg-opacity-50 z-20 cursor-pointer"
         onClick={onClose}
       />
       
-      <div className="absolute w-[441px] h-full bg-gray-light rounded-xl z-30">
+      {/* Karta informacyjna - pozycjonowana po lewej stronie */}
+      <div className="absolute left-0 top-0 w-[441px] h-full bg-gray-light rounded-xl z-30">
         {/* Kontener z kartami */}
         <div className="absolute inset-0 bg-gray-dark rounded-xl p-1">
           <div className="flex flex-col gap-1 w-full h-full">
@@ -234,7 +235,7 @@ const LocationCard: React.FC<{
               <CardContent className="w-full h-full p-8 relative z-10 flex flex-col justify-between">
                 {/* Przycisk zamknięcia */}
                 <div className="relative w-[45px] h-[47px] flex items-start">
-                  <div className="absolute left-0 w-[45px] h-[45px] bg-gray-light rounded-3xl flex items-center justify-center cursor-pointer" onClick={onClose}>
+                  <div className="absolute left-0 w-[45px] h-[45px] bg-gray-light rounded-3xl flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors" onClick={onClose}>
                     <span className="text-gray-dark text-[36px] font-normal">×</span>
                   </div>
                 </div>

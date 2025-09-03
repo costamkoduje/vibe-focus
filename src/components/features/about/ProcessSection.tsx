@@ -57,7 +57,7 @@ export const ProcessSection = (): React.JSX.Element => {
           </header>
 
           {/* Bento Grid - Responsive layout */}
-          <div className="w-full px-4">
+          <div className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-5 mx-0">
               {/* Empty space for centering - 2 columns on desktop */}
               <div className="hidden lg:block lg:col-span-2"></div>
