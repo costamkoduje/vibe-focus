@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import { useTranslation } from "@/lib/i18n";
 
 interface Project {
   projectName: string;
@@ -13,12 +14,21 @@ export const ProjectsTableSection = (): React.JSX.Element => {
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   const itemsPerPage = 6;
+  const { t, language } = useTranslation();
+
+  // Ustaw flagę isClient po zamontowaniu komponentu
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const loadProjectsData = async () => {
       try {
-        const response = await fetch('/data/projects.csv');
+        // Wybierz odpowiedni plik CSV w zależności od języka
+        const csvFileName = language === 'pl' ? 'projectspl.csv' : 'projectsen.csv';
+        const response = await fetch(`/data/${csvFileName}`);
         const csvText = await response.text();
         
         Papa.parse(csvText, {
@@ -29,8 +39,8 @@ export const ProjectsTableSection = (): React.JSX.Element => {
               const typedRow = row as Record<string, string>;
               return {
                 projectName: typedRow['Project Name'] || '',
-                location: typedRow['Miejsce'] || '',
-                scope: typedRow['zakres prac'] || ''
+                location: typedRow[language === 'pl' ? 'Miejsce' : 'Location'] || '',
+                scope: typedRow[language === 'pl' ? 'zakres prac' : 'Scope of Work'] || ''
               };
             });
             setProjectsData(projects);
@@ -46,7 +56,7 @@ export const ProjectsTableSection = (): React.JSX.Element => {
     };
 
     loadProjectsData();
-  }, []);
+  }, [language]);
 
   // Obliczanie danych dla paginacji
   const totalPages = Math.ceil(projectsData.length / itemsPerPage);
@@ -63,14 +73,14 @@ export const ProjectsTableSection = (): React.JSX.Element => {
     setCurrentPage(prev => Math.min(totalPages - 1, prev + 1));
   };
 
-  if (loading) {
+  if (loading || !isClient) {
     return (
       <section className="flex flex-col w-full items-center gap-16 px-5 pt-5 pb-20 relative">
         <div className="flex flex-col items-center gap-16 w-full bg-gray-mid rounded-xl py-20">
           <div className="flex flex-col items-center gap-16 w-full max-w-7xl px-4 sm:px-8 lg:px-16">
             <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
               <h2 className="fonts-fig-xl text-gray-dark leading-tight">
-                Baza Projektów
+                {t('projectsPage.table.title')}
               </h2>
             </div>
           </div>
@@ -86,7 +96,7 @@ export const ProjectsTableSection = (): React.JSX.Element => {
           {/* Header */}
           <div className="flex flex-col items-center gap-8 text-center max-w-4xl mx-auto">
             <h2 className="fonts-fig-xl text-gray-dark leading-tight">
-              Baza Projektów
+              {t('projectsPage.table.title')}
             </h2>
           </div>
 
@@ -97,13 +107,13 @@ export const ProjectsTableSection = (): React.JSX.Element => {
                 {/* Desktop Table Header - ukryty na mobile */}
                 <div className="hidden md:grid md:grid-cols-9 gap-1 mb-1">
                   <div className="bg-gray-mid border border-gray-dark rounded-m p-6 col-span-2">
-                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">LOKALIZACJA</div>
+                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">{t('projectsTable.headers.location')}</div>
                   </div>
                   <div className="bg-gray-mid border border-gray-dark rounded-m p-6 col-span-3">
-                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">NAZWA PROJEKTU</div>
+                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">{t('projectsTable.headers.projectName')}</div>
                   </div>
                   <div className="bg-gray-mid border border-gray-dark rounded-m p-6 col-span-4">
-                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">ZAKRES WYKONANYCH PRAC</div>
+                    <div className="fonts-mono-l text-gray-dark uppercase tracking-wide">{t('projectsTable.headers.scopeOfWork')}</div>
                   </div>
                 </div>
 
@@ -130,19 +140,19 @@ export const ProjectsTableSection = (): React.JSX.Element => {
                     <div key={startIndex + index} className="bg-gray-mid border border-gray-dark rounded-m p-4 space-y-3">
                       {/* Lokalizacja */}
                       <div className="space-y-1">
-                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">LOKALIZACJA</div>
+                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">{t('projectsTable.headers.location')}</div>
                         <div className="fonts-mono-m text-gray-dark uppercase">{project.location}</div>
                       </div>
                       
                       {/* Nazwa projektu */}
                       <div className="space-y-1">
-                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">NAZWA PROJEKTU</div>
+                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">{t('projectsTable.headers.projectName')}</div>
                         <div className="fonts-mono-m text-gray-dark uppercase">{project.projectName}</div>
                       </div>
                       
                       {/* Zakres prac */}
                       <div className="space-y-1">
-                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">ZAKRES WYKONANYCH PRAC</div>
+                        <div className="fonts-mono-xs text-gray-dark/70 uppercase tracking-wide">{t('projectsTable.headers.scopeOfWork')}</div>
                         <div className="fonts-mono-xs text-gray-dark uppercase leading-relaxed">{project.scope}</div>
                       </div>
                     </div>

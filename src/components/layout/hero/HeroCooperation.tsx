@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,9 +16,12 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const tweenRef = useRef<gsap.core.Tween | null>(null);
   
+  // Sprawdzanie czy to mobile
+  const [isMobile, setIsMobile] = useState(false);
+  
   const cards = translations.cooperationPage?.hero?.cards || [
     {
-      title: "Globalna Obecnoś",
+      title: "Globalna Obecność",
       description: "Realizacja projektów jednocześnie w stoczniach na całym świecie."
     },
     {
@@ -48,7 +51,18 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
   ];
 
   useEffect(() => {
-    if (!sectionRef.current || !containerRef.current) return;
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!sectionRef.current || !containerRef.current || isMobile) return;
 
     // Krótkie opóźnienie, aby upewnić się, że DOM jest gotowy
     const timer = setTimeout(() => {
@@ -106,13 +120,74 @@ export const HeroCoWorkSection = (): React.JSX.Element => {
         tweenRef.current.kill();
       }
     };
-  }, []);
+  }, [isMobile]);
+
+  // Mobile layout - karty w pionie
+
+  // Mobile layout - karty w pionie
+  if (isMobile) {
+    return (
+      <section 
+        ref={sectionRef}
+        className="flex flex-col w-full md:w-[calc(100%-2rem)] py-6 relative bg-gray-dark rounded-2xl mx-0 md:mx-4 mt-4"
+        style={{ paddingTop: '80px' }}
+      >
+        {/* Mobile Header */}
+        <div className="px-4 mb-8">
+          <div className="text-center space-y-4">
+            <div className="fonts-mono-xs text-gray-light tracking-wide">
+              {translations.cooperationPage.hero.subtitle}
+            </div>
+            
+            <h1 className="fonts-fig-xl text-light leading-tight">
+              {translations.cooperationPage.hero.title}
+            </h1>
+            
+            <p className="fonts-mono-m text-gray-light leading-relaxed">
+              {translations.cooperationPage?.hero?.description || "Odkryj pełne spektrum możliwości współpracy z liderem elektrotechniki morskiej. Focus Electro oferuje kompleksowe wsparcie na każdym etapie realizacji projektów stoczniowych - od planowania po długoterminową obsługę serwisową."}
+            </p>
+          </div>
+        </div>
+
+        {/* Mobile Cards - vertical layout */}
+        <div className="w-[calc(100%-2rem)] bg-gray-mid rounded-l p-1 mx-4">
+          <div className="flex flex-col h-full gap-1">
+            {cards.map((card, index) => (
+              <div 
+                key={index}
+                className="bg-dark rounded-l p-6 flex flex-col justify-between pb-10"
+              >
+                <div>
+                  {/* Icon container - top left */}
+                  <div className="w-12 h-12 bg-gray-mid rounded-lg flex items-center justify-center mb-6">
+                    <svg className="w-6 h-6 text-gray-dark" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                  </div>
+                  
+                  <h3 className="fonts-mono-m text-light mb-8 mt-10 font-semibold">
+                    {card.title}
+                  </h3>
+                  
+                  <p className="fonts-mono-xs text-gray-light leading-relaxed mb-6">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+      </section>
+    );
+  }
 
   return (
     <section 
       ref={sectionRef}
       id="horizontal-scroll-section" 
-      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-3xl mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh] mt-5"
+      className="flex flex-col w-[calc(100%-2.5rem)] py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-gray-dark rounded-3xl mx-5 h-[70vh] sm:h-[75vh] lg:h-[85vh] mt-4"
       style={{ paddingTop: '80px' }} // Dodajemy miejsce dla nawigacji
     >
       

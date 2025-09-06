@@ -67,24 +67,44 @@ export const en: Translations = {
     description: "Our most important projects in the marine industry that showcase our experience and capabilities.",
     projects: [
       {
-        name: "Gdańsk Shipyard Project",
-        role: "Main electrical installation contractor"
+        name: "CCL Jubilee TE",
+        role: "Final finishing works during the maiden voyage."
       },
       {
-        name: "Marine unit modernization",
-        role: "Comprehensive automation and control systems"
+        name: "Disney Adventure",
+        role: "New construction. Implementation of control and power systems for entertainment in the theater."
       },
       {
-        name: "Port installations",
-        role: "Electrical systems for port infrastructure"
+        name: "Furgo Voyager",
+        role: "General reconstruction at the owner's request."
       },
       {
-        name: "Process automation",
-        role: "Advanced industrial automation systems"
+        name: "Les Alizes",
+        role: "Installation of new sockets, CCTV systems and UPS connections in the theater and lobby area."
       },
       {
-        name: "Offshore project",
-        role: "Specialized installations for marine platforms"
+        name: "Icon of the seas",
+        role: "Comprehensive implementation of electrical systems in the crew stairwell area during new construction."
+      },
+      {
+        name: "Aroya Manara",
+        role: "General reconstruction at the new owner's request."
+      },
+      {
+        name: "Margaritaville",
+        role: "Client support in electrical renovation of over 200 cabins."
+      },
+      {
+        name: "Serenada of the Seas",
+        role: "Client support in adding over 200 cameras throughout the ship. New installation. Modernization of IT infrastructure and entertainment systems on the superstructure deck."
+      },
+      {
+        name: "Spirit of tasmania",
+        role: "Comprehensive implementation of electrical systems in the stairwell area."
+      },
+      {
+        name: "ORP Kormoran",
+        role: "System commissioning - automation."
       }
     ]
   },
@@ -439,6 +459,104 @@ export const en: Translations = {
     subtitle: "(Global availability)",
     title: "Our footprint on the map<br />of world shipyards",
     description: "Our journey began in 2018 in German Rostock. Today, our teams work simultaneously in shipyards around the world - from Meyer Turku to projects in Asia and America. The map below shows the locations of our projects that we are proud of."
+  },
+  interactiveMap: {
+    labels: {
+      location: "LOCATION",
+      shipyards: "SHIPYARDS"
+    },
+    locations: {
+      arabia: {
+        name: "Arabia",
+        shipyards: ["Jeddah Saudi"]
+      },
+      singapore: {
+        name: "Singapore",
+        shipyards: ["Singapore"]
+      },
+      australia: {
+        name: "Australia",
+        shipyards: ["Sydney"]
+      },
+      bahamas: {
+        name: "Bahamas",
+        shipyards: ["Freeport, Rock Sound"]
+      },
+      barbados: {
+        name: "Barbados",
+        shipyards: ["Barbados"]
+      },
+      china: {
+        name: "China",
+        shipyards: ["Shanghai"]
+      },
+      croatia: {
+        name: "Croatia",
+        shipyards: ["Dubrovnik"]
+      },
+      finland: {
+        name: "Finland",
+        shipyards: ["Rauma, Turku"]
+      },
+      france: {
+        name: "France",
+        shipyards: ["Brest, Marseille, Saint-Nazaire"]
+      },
+      greece: {
+        name: "Greece",
+        shipyards: ["Athens, Corfu"]
+      },
+      niderlands: {
+        name: "Netherlands",
+        shipyards: ["Amsterdam, Rotterdam"]
+      },
+      malta: {
+        name: "Malta",
+        shipyards: ["Malta"]
+      },
+      maroco: {
+        name: "Morocco",
+        shipyards: ["Casablanca"]
+      },
+      germany: {
+        name: "Germany",
+        shipyards: ["Bremen, Bremerhaven, Wismar"]
+      },
+      poland: {
+        name: "Poland",
+        shipyards: ["Gdynia, Gdańsk Remontowa"]
+      },
+      UK: {
+        name: "United Kingdom",
+        shipyards: ["Belfast, Southampton"]
+      },
+      USA: {
+        name: "USA",
+        shipyards: ["Boston, Bremerhaven, Los Angeles, Miami, Orlando, Seattle"]
+      },
+      italy: {
+        name: "Italy",
+        shipyards: ["Civitavecchia, Genoa, Palermo"]
+      }
+    }
+  },
+  projectLocations: {
+    "bremerhaven-miami": "Bremerhaven / Miami",
+    "wismar-germany": "Wismar / Germany",
+    "gdansk-poland": "Gdańsk Shipyard / Poland",
+    "saint-nazaire-france": "Saint-Nazaire / France",
+    "turku-finland": "Turku / Finland",
+    "bremerhaven-germany": "Bremerhaven / Germany",
+    "belfast-uk": "Belfast / UK",
+    "freeport-bahamas": "Freeport / Bahamas",
+    "rauma-finland": "Rauma / Finland"
+  },
+  projectsTable: {
+    headers: {
+      location: "LOCATION",
+      projectName: "PROJECT NAME",
+      scopeOfWork: "SCOPE OF WORK"
+    }
   },
   metadata: {
     home: {

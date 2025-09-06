@@ -12,33 +12,73 @@ export const ProjectsSection = (): React.JSX.Element => {
   const projects = [
     {
       id: 1,
-      name: translations.projects.projects[0]?.name || "Celebrity Apex",
-      role: translations.projects.projects[0]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
-      image: "/images/projects/p1.jpg"
+      name: translations.projects.projects[0]?.name || "CCL Jubilee TE",
+      location: translations.projectLocations?.["bremerhaven-miami"] || "Bremerhaven / Miami",
+      role: translations.projects.projects[0]?.role || "Ostatnie prace wykończeniowe podczas pierwszego rejsu.",
+      image: "/images/projectsimg/ccljubileete.jpg"
     },
     {
       id: 2,
-      name: translations.projects.projects[1]?.name || "NCL Epic",
-      role: translations.projects.projects[1]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
-      image: "/images/projects/p2.jpg"
+      name: translations.projects.projects[1]?.name || "Disney Adventure",
+      location: translations.projectLocations?.["wismar-germany"] || "Wismar / Niemcy",
+      role: translations.projects.projects[1]?.role || "Nowa budowa. Realizacja systemów sterowania i zasilania entertaiment w teatrze.",
+      image: "/images/projectsimg/disneyadventure.jpg"
     },
     {
       id: 3,
-      name: translations.projects.projects[2]?.name || "Ropax",
-      role: translations.projects.projects[2]?.role || "Nowa budowa jednostki. Wsparcie klienta w realizacji podłączeń elektrycznych w rejonie siłowni. Wymiana urządzeń gastronomicznych oraz modernizacja instalacji elektrycznej w strefie bufetu. ",
-      image: "/images/projects/p3.jpg"
+      name: translations.projects.projects[2]?.name || "FUGRO VOYAGER",
+      location: translations.projectLocations?.["gdansk-poland"] || "Gdańska Stocznia Remontowa / Polska",
+      role: translations.projects.projects[2]?.role || "Generalna przebudowa na zyczenie właściciela.",
+      image: "/images/projectsimg/furgovoyager.jpg"
     },
     {
       id: 4,
-      name: translations.projects.projects[3]?.name || "Adventure of the Seas",
-      role: translations.projects.projects[3]?.role || "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki.",
-      image: "/images/projects/p4.jpg"
+      name: translations.projects.projects[3]?.name || "Les Alizes",
+      location: translations.projectLocations?.["saint-nazaire-france"] || "Saint-Nazaire / Francja",
+      role: translations.projects.projects[3]?.role || "Instalacja nowych gniazd, systemów CCTV i podłączeń UPS w rejonie teatru oraz lobby.",
+      image: "/images/projectsimg/lesalizes.jpg"
     },
     {
       id: 5,
-      name: translations.projects.projects[4]?.name || "Aida Diva E",
-      role: translations.projects.projects[4]?.role || "Wsparcie klienta podczas szerokiego zakresu przebudowy. Praca w rejonie restaruacji oraz kabin.",
-      image: "/images/projects/p5.jpg"
+      name: translations.projects.projects[4]?.name || "ICON of the seas",
+      location: translations.projectLocations?.["turku-finland"] || "Turku / Finlandia",
+      role: translations.projects.projects[4]?.role || "Kompleksowa realizacja systemów elektrycznych w rejonie załogowych klatek schodowych podczas nowej budowy.",
+      image: "/images/projectsimg/iconoftheseas.jpg"
+    },
+    {
+      id: 6,
+      name: translations.projects.projects[5]?.name || "Aroya Manara",
+      location: translations.projectLocations?.["bremerhaven-germany"] || "Bremenhaven / Niemcy",
+      role: translations.projects.projects[5]?.role || "Generalna przebudowa na zyczenie nowego właściciela.",
+      image: "/images/projectsimg/aroyamanara.jpg"
+    },
+    {
+      id: 7,
+      name: translations.projects.projects[6]?.name || "Margaritaville",
+      location: translations.projectLocations?.["belfast-uk"] || "Belfast / UK",
+      role: translations.projects.projects[6]?.role || "Wsparcie klienta w zakresie elektrycznym remont ponad 200 kabin.",
+      image: "/images/projectsimg/margaritaville.jpg"
+    },
+    {
+      id: 8,
+      name: translations.projects.projects[7]?.name || "Serenada of the Seas",
+      location: translations.projectLocations?.["freeport-bahamas"] || "Freeport / Bahamy",
+      role: translations.projects.projects[7]?.role || "Wsparcie klienta przy dodaniu ponad 200 kamer na całym statku. Nowa instalacja. Modernizacja infrastruktury IT i systemów rozrywkowych na pokładzie nadbudówki.",
+      image: "/images/projectsimg/serenadaoftheseas.jpg"
+    },
+    {
+      id: 9,
+      name: translations.projects.projects[8]?.name || "Spirit of tasmania",
+      location: translations.projectLocations?.["rauma-finland"] || "Rauma / Finlandia",
+      role: translations.projects.projects[8]?.role || "Kompleksowa realizacja systemów elektrycznych w rejonie klatek schodowych.",
+      image: "/images/projectsimg/spiritoftasmania.jpg"
+    },
+    {
+      id: 10,
+      name: translations.projects.projects[9]?.name || "ORP Kormoran",
+      location: translations.projectLocations?.["gdansk-poland"] || "Gdańska Stocznia Remontowa / Polska",
+      role: translations.projects.projects[9]?.role || "Uruchamianie systemów - automatyka.",
+      image: "/images/projectsimg/orpkormoran.jpg"
     }
   ];
 
@@ -114,6 +154,9 @@ export const ProjectsSection = (): React.JSX.Element => {
                   <h3 className="fonts-fig-m text-light leading-tight">
                     {project.name}
                   </h3>
+                  <p className="fonts-mono-xs text-light opacity-90 uppercase tracking-wide leading-relaxed">
+                    {project.location}
+                  </p>
                   <p className="fonts-mono-xs text-gray-light opacity-90 uppercase tracking-wide leading-relaxed">
                     {project.role}
                   </p>

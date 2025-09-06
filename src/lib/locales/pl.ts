@@ -67,24 +67,44 @@ export const pl: Translations = {
     description: "Nasze najważniejsze projekty w branży morskiej, które pokazują nasze doświadczenie i możliwości.",
     projects: [
       {
-        name: "Celebrity Apex",
-        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
+        name: "CCL Jubilee TE",
+        role: "Ostatnie prace wykończeniowe podczas pierwszego rejsu."
       },
       {
-        name: "NCL Epic",
-        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
+        name: "Disney Adventure",
+        role: "Nowa budowa. Realizacja systemów sterowania i zasilania entertaiment w teatrze."
       },
       {
-        name: "Ropax",
-        role: "Nowa budowa jednostki. Wsparcie klienta w realizacji podłączeń elektrycznych w rejonie siłowni. Wymiana urządzeń gastronomicznych oraz modernizacja instalacji elektrycznej w strefie bufetu. "
+        name: "Fugro Voyager",
+        role: "Generalna przebudowa na zyczenie właściciela."
       },
       {
-        name: "Adventure of the Seas",
-        role: "Wsparcie klienta w realizacji nowej instalacji elektrycznej w rejonie nadbudówki."
+        name: "Les Alizes",
+        role: "Instalacja nowych gniazd, systemów CCTV i podłączeń UPS w rejonie teatru oraz lobby."
       },
       {
-        name: "Aida Diva E",
-        role: "Wsparcie klienta podczas szerokiego zakresu przebudowy. Praca w rejonie restaruacji oraz kabin."
+        name: "Icon of the seas",
+        role: "Kompleksowa realizacja systemów elektrycznych w rejonie załogowych klatek schodowych podczas nowej budowy."
+      },
+      {
+        name: "Aroya Manara",
+        role: "Generalna przebudowa na zyczenie nowego właściciela."
+      },
+      {
+        name: "Margaritaville",
+        role: "Wsparcie klienta w zakresie elektrycznym remont ponad 200 kabin."
+      },
+      {
+        name: "Serenada of the Seas",
+        role: "Wsparcie klienta przy dodaniu ponad 200 kamer na całym statku. Nowa instalacja. Modernizacja infrastruktury IT i systemów rozrywkowych na pokładzie nadbudówki."
+      },
+      {
+        name: "Spirit of tasmania",
+        role: "Kompleksowa realizacja systemów elektrycznych w rejonie klatek schodowych."
+      },
+      {
+        name: "ORP Kormoran",
+        role: "Uruchamianie systemów - automatyka."
       }
     ]
   },
@@ -438,6 +458,104 @@ export const pl: Translations = {
     subtitle: "(Globalna dostępność)",
     title: "Nasze ślady na mapie<br />światowych stoczni",
     description: "Nasza podróż rozpoczęła się w 2018 roku w niemieckim Rostock. Dziś nasze zespoły pracują jednocześnie w stoczniach na całym świecie - od Meyer Turku po projekty w Azji i Ameryce. Mapa poniżej pokazuje lokalizacje naszych projektów, z których jesteśmy dumni."
+  },
+  interactiveMap: {
+    labels: {
+      location: "LOKALIZACJA",
+      shipyards: "STOCZNIE"
+    },
+    locations: {
+      arabia: {
+        name: "Arabia",
+        shipyards: ["Jeddah Saudi"]
+      },
+      singapore: {
+        name: "Singapur",
+        shipyards: ["Singapur"]
+      },
+      australia: {
+        name: "Australia",
+        shipyards: ["Sydney"]
+      },
+      bahamas: {
+        name: "Bahamy",
+        shipyards: ["Freeport, Rock Sound"]
+      },
+      barbados: {
+        name: "Barbados",
+        shipyards: ["Barbados"]
+      },
+      china: {
+        name: "Chiny",
+        shipyards: ["Szanghaj"]
+      },
+      croatia: {
+        name: "Chorwacja",
+        shipyards: ["Dubrownik"]
+      },
+      finland: {
+        name: "Finlandia",
+        shipyards: ["Rauma, Turku"]
+      },
+      france: {
+        name: "Francja",
+        shipyards: ["Brest, Marsylia, Saint-Nazaire"]
+      },
+      greece: {
+        name: "Grecja",
+        shipyards: ["Ateny, Korfu"]
+      },
+      niderlands: {
+        name: "Holandia",
+        shipyards: ["Amsterdam, Rotterdam"]
+      },
+      malta: {
+        name: "Malta",
+        shipyards: ["Malta"]
+      },
+      maroco: {
+        name: "Maroko",
+        shipyards: ["Casablanca"]
+      },
+      germany: {
+        name: "Niemcy",
+        shipyards: ["Bremen, Bremerhaven, Wismar"]
+      },
+      poland: {
+        name: "Polska",
+        shipyards: ["Gdynia, Gdańsk Remontowa"]
+      },
+      UK: {
+        name: "Wielka Brytania",
+        shipyards: ["Belfast, Southampton"]
+      },
+      USA: {
+        name: "USA",
+        shipyards: ["Boston, Bremerhaven, Los Angeles, Miami, Orlando, Seattle"]
+      },
+      italy: {
+        name: "Włochy",
+        shipyards: ["Civitavecchia, Genua, Palermo"]
+      }
+    }
+  },
+  projectLocations: {
+    "bremerhaven-miami": "Bremerhaven / Miami",
+    "wismar-germany": "Wismar / Niemcy",
+    "gdansk-poland": "Gdańska Stocznia Remontowa / Polska",
+    "saint-nazaire-france": "Saint-Nazaire / Francja",
+    "turku-finland": "Turku / Finlandia",
+    "bremerhaven-germany": "Bremerhaven / Niemcy",
+    "belfast-uk": "Belfast / UK",
+    "freeport-bahamas": "Freeport / Bahamy",
+    "rauma-finland": "Rauma / Finlandia"
+  },
+  projectsTable: {
+    headers: {
+      location: "LOKALIZACJA",
+      projectName: "NAZWA PROJEKTU",
+      scopeOfWork: "ZAKRES WYKONANYCH PRAC"
+    }
   },
   metadata: {
     home: {

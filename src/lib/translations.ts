@@ -262,6 +262,31 @@ export interface ProjectsMapsSectionTranslations {
   description: string;
 }
 
+export interface InteractiveMapTranslations {
+  labels: {
+    location: string;
+    shipyards: string;
+  };
+  locations: {
+    [key: string]: {
+      name: string;
+      shipyards: string[];
+    };
+  };
+}
+
+export interface ProjectLocationsTranslations {
+  [key: string]: string;
+}
+
+export interface ProjectsTableTranslations {
+  headers: {
+    location: string;
+    projectName: string;
+    scopeOfWork: string;
+  };
+}
+
 export interface MetadataTranslations {
   home: {
     title: string;
@@ -315,5 +340,8 @@ export interface Translations {
   darkImageSection: DarkImageSectionTranslations;
   imageSection2: ImageSection2Translations;
   projectsMapsSection: ProjectsMapsSectionTranslations;
+  interactiveMap: InteractiveMapTranslations;
+  projectLocations: ProjectLocationsTranslations;
+  projectsTable: ProjectsTableTranslations;
   metadata: MetadataTranslations;
 }

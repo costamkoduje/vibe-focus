@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/cards";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "@/lib/i18n";
 
 // Rejestrujemy plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -11,10 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 // Typy dla lokalizacji na mapie
 interface MapLocation {
   id: string;
-  name: string;
   x: number; // pozycja X w procentach
   y: number; // pozycja Y w procentach
-  shipyards: string[];
   isActive?: boolean;
 }
 
@@ -22,146 +21,110 @@ interface MapLocation {
 const mapLocations: MapLocation[] = [
   {
     id: "arabia",
-    name: "Arabia",
     x: 66,
     y: 42,
-    shipyards: ["Jeddah Saudi"],
     isActive: true
   },
   {
     id: "singapore",
-    name: "Singapore",
     x: 105,
     y: 35,
-    shipyards: ["Singapore"],
     isActive: true
   },
   {
     id: "australia",
-    name: "Australia",
     x: 110,
     y: 68,
-    shipyards: ["Sydney"],
     isActive: true
   },
   {
     id: "bahamas",
-    name: "Bahamas",
     x: 8,
     y: 46,
-    shipyards: ["Freeport, Rock Sound"],
     isActive: true
   },
   {
     id: "barbados",
-    name: "Barbados",
     x: 12,
     y: 48,
-    shipyards: ["Barbados"],
     isActive: true
   },
   {
     id: "china",
-    name: "China",
     x: 116,
     y: 26,
-    shipyards: ["Shanghai"],
     isActive: true
   },
   {
     id: "croatia",
-    name: "Croatia",
     x: 48,
     y: 32,
-    shipyards: ["Dubrovnik"],
     isActive: true
   },
   {
     id: "finland",
-    name: "Finland",
     x: 51,
     y: 22,
-    shipyards: ["Rauma, Turku"],
     isActive: true
   },
   {
     id: "france",
-    name: "France",
     x: 43,
     y: 32,
-    shipyards: ["Brest, Marsylia, Saint-Nazaire"],
     isActive: true
   },
   {
     id: "greece",
-    name: "Greece",
     x: 54,
     y: 34,
-    shipyards: ["Ateny, Korfu"],
     isActive: true
   },
   {
     id: "niderlands",
-    name: "Niderlands",
     x: 47,
     y: 28,
-    shipyards: ["Amsterdam, Rotterdam, "],
     isActive: true
   },
   {
     id: "malta",
-    name: "Malta",
     x: 46,
     y: 36,
-    shipyards: ["Malta"],
     isActive: true
   },
   {
     id: "maroco",
-    name: "Maroc",
     x: 41,
     y: 36,
-    shipyards: ["Casablanca"],
     isActive: true
   },
   {
     id: "germany",
-    name: "Germany",
     x: 51,
     y: 28,
-    shipyards: ["Bremen, Bremenhaven, Wismar"],
     isActive: true
   },
   {
     id: "poland",
-    name: "Poland",
     x: 54,
     y: 25,
-    shipyards: ["Gdynia, Gdańsk Remontowa"],
     isActive: true
   },
   {
     id: "UK",
-    name: "UK",
     x: 42,
     y: 26,
-    shipyards: ["Belfast, Southampton, "],
     isActive: true
   },
   {
     id: "USA",
-    name: "USA",
     x: 7,
     y: 30,
-    shipyards: ["Boston, Bremerhaven, Los angeles, Miami, Orlando, Seattle "],
     isActive: true
   },
   {
     id: "italy",
-    name: "Italy",
     x: 50,
     y: 36,
-    shipyards: ["Civitavecchia, Genua, Palermo "],
     isActive: true
   },
 ];
@@ -171,7 +134,8 @@ const MapPin: React.FC<{
   location: MapLocation;
   isSelected: boolean;
   onClick: () => void;
-}> = ({ location, isSelected, onClick }) => {
+  locationName: string;
+}> = ({ location, isSelected, onClick, locationName }) => {
   return (
     <div
       className={`absolute cursor-pointer transition-all duration-300 transform -translate-x-1/2 -translate-y-1/2 map-pin ${
@@ -209,7 +173,7 @@ const MapPin: React.FC<{
           
           {/* Napis obok pinezki - tylko po hover */}
           <span className="text-gray-dark text-xs font-medium uppercase whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 max-w-0 group-hover:max-w-xs overflow-hidden">
-            {location.name}
+            {locationName}
           </span>
         </div>
       </div>
@@ -221,7 +185,11 @@ const MapPin: React.FC<{
 const LocationCard: React.FC<{
   location: MapLocation | null;
   onClose: () => void;
-}> = ({ location, onClose }) => {
+  locationName: string;
+  shipyards: string[];
+  locationLabel: string;
+  shipyardsLabel: string;
+}> = ({ location, onClose, locationName, shipyards, locationLabel, shipyardsLabel }) => {
   if (!location) return null;
 
     return (
@@ -251,10 +219,10 @@ const LocationCard: React.FC<{
                 {/* Informacje o lokalizacji */}
                 <div className="flex flex-col gap-2.5">
                   <div className="font-mono-xs text-gray-dark uppercase tracking-[0.32px]">
-                    [LOKALIZACJA]
+                    [{locationLabel}]
                   </div>
                   <div className="text-[65px] text-gray-dark font-normal tracking-[-2.627px] leading-[72px]">
-                    {location.name}
+                    {locationName}
                   </div>
                 </div>
               </CardContent>
@@ -265,10 +233,10 @@ const LocationCard: React.FC<{
               <CardContent className="w-full h-full p-8 relative z-10 flex flex-col justify-center">
                 <div className="flex flex-col gap-5">
                   <div className="font-mono-xs text-gray-dark uppercase">
-                    [STOCZNIE]
+                    [{shipyardsLabel}]
                   </div>
                   <div className="flex flex-col gap-5 font-mono-xs text-gray-dark uppercase">
-                    {location.shipyards.map((shipyard, index) => (
+                    {shipyards.map((shipyard, index) => (
                       <div key={index} className="leading-[26px]">
                         {shipyard}
                       </div>
@@ -288,7 +256,14 @@ const LocationCard: React.FC<{
 export const InteractiveMap: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMounted, setIsMounted] = useState(false);
   const mapRef = useRef<HTMLDivElement>(null);
+  const { t, translations } = useTranslation();
+
+  // Zapobiegaj błędom hydratacji
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     let tl: gsap.core.Timeline | null = null;
@@ -390,6 +365,7 @@ export const InteractiveMap: React.FC = () => {
                 location={location}
                 isSelected={selectedLocation?.id === location.id}
                 onClick={() => handlePinClick(location)}
+                locationName={isMounted ? t(`interactiveMap.locations.${location.id}.name`) : location.id}
               />
             ))}
           </div>
@@ -400,6 +376,10 @@ export const InteractiveMap: React.FC = () => {
       <LocationCard
         location={selectedLocation}
         onClose={handleCloseCard}
+        locationName={selectedLocation && isMounted ? t(`interactiveMap.locations.${selectedLocation.id}.name`) : selectedLocation?.id || ''}
+        shipyards={selectedLocation && isMounted ? translations.interactiveMap?.locations?.[selectedLocation.id]?.shipyards || [] : []}
+        locationLabel={isMounted ? t('interactiveMap.labels.location') : 'LOCATION'}
+        shipyardsLabel={isMounted ? t('interactiveMap.labels.shipyards') : 'SHIPYARDS'}
       />
     </div>
   );

@@ -48,7 +48,7 @@ export const useI18n = create<I18nStore>()(
       },
     }),
     {
-      name: 'i18n-storage',
+      name: 'i18n-storage-v2',
     }
   )
 );
@@ -79,6 +79,7 @@ export const toggleLanguage = () => {
 export const clearI18nCache = () => {
   if (typeof window !== 'undefined') {
     localStorage.removeItem('i18n-storage');
+    localStorage.removeItem('i18n-storage-v2');
     window.location.reload();
   }
 };

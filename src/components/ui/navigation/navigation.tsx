@@ -46,7 +46,7 @@ export const Navigation = (): React.JSX.Element => {
   ];
 
   return (
-    <div ref={navigationRef} id="navigation" className="flex flex-col w-full sticky top-0 z-50">
+    <div ref={navigationRef} id="navigation" className="flex flex-col w-full z-50">
       {/* Mobile Navigation */}
       <div className="flex md:hidden w-full items-center justify-between gap-2 ">
         <Link href="/" className="flex items-center gap-2 mx-5 py-3 hover:opacity-80 transition-opacity min-h-[44px]">
